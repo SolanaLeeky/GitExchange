@@ -496,19 +496,19 @@ def format_portfolio(trader: dict, market: dict) -> str:
             lines.append(f"**{t_upper}**: [Buy]({buy_link}) | [Sell]({sell_link})")
         lines.append("")
 
-    # Profile Badge
+    # Profile Badge (shields.io endpoint — works with GitHub's camo proxy)
     username = trader["username"]
-    badge_url = f"https://solanaleaky.github.io/GitExchange/badges/{username}.svg"
-    badge_raw = f"https://raw.githubusercontent.com/SolanaLeeky/GitExchange/main/docs/badges/{username}.svg"
+    json_url = f"https://raw.githubusercontent.com/SolanaLeeky/GitExchange/main/docs/badges/{username}.json"
+    shields_url = f"https://img.shields.io/endpoint?url={json_url}&cacheSeconds=3600"
     lines.extend([
         "### Your Profile Badge",
         "",
-        f"![GitExchange Badge]({badge_url})",
+        f"![GitExchange Badge]({shields_url})",
         "",
         "Add this to your GitHub profile README:",
         "",
         f"```markdown",
-        f"[![GitExchange]({badge_raw})](https://github.com/SolanaLeeky/GitExchange)",
+        f"[![GitExchange]({shields_url})](https://github.com/SolanaLeeky/GitExchange)",
         f"```",
         "",
     ])

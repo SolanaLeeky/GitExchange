@@ -524,8 +524,41 @@ def _badge_svg(username: str, rank: int, pnl_pct: float, total_value: float, tra
 </svg>'''
 
 
+def _badge_json(rank: int, pnl_pct: float, total_value: float, trade_count: int) -> dict:
+    """Generate a shields.io endpoint JSON for a trader badge."""
+    if pnl_pct >= 50:
+        color = "brightgreen"
+    elif pnl_pct >= 0:
+        color = "blue"
+    elif pnl_pct >= -20:
+        color = "orange"
+    else:
+        color = "red"
+
+    rank_label = f"#{rank}" if rank <= 999 else "#999+"
+    pnl_sign = "+" if pnl_pct >= 0 else ""
+
+    if total_value >= 1_000_000:
+        val_label = f"${total_value/1_000_000:.1f}M"
+    elif total_value >= 1_000:
+        val_label = f"${total_value/1_000:.1f}K"
+    else:
+        val_label = f"${total_value:.0f}"
+
+    return {
+        "schemaVersion": 1,
+        "label": f"GitExchange {rank_label}",
+        "message": f"{pnl_sign}{pnl_pct:.1f}% | {val_label} | {trade_count} trades",
+        "color": color,
+        "namedLogo": "github",
+        "logoColor": "white",
+    }
+
+
 def generate_profile_badges(market: dict) -> int:
-    """Generate SVG badges for all traders. Returns count generated."""
+    """Generate SVG + JSON badges for all traders. Returns count generated."""
+    from utils import save_json as _save_json
+
     badges_dir = ROOT_DIR / "docs" / "badges"
     badges_dir.mkdir(parents=True, exist_ok=True)
 
@@ -545,15 +578,24 @@ def generate_profile_badges(market: dict) -> int:
     count = 0
     for rank, t in enumerate(trader_data, 1):
         username = t["username"]
+        pnl_pct = t.get("pnl_pct", 0)
+        total_value = t.get("total_value", 0)
+        trade_count = t.get("trade_count", 0)
+
+        # SVG badge (for direct embedding)
         svg = _badge_svg(
             username=username,
             rank=rank,
-            pnl_pct=t.get("pnl_pct", 0),
-            total_value=t.get("total_value", 0),
-            trade_count=t.get("trade_count", 0),
+            pnl_pct=pnl_pct,
+            total_value=total_value,
+            trade_count=trade_count,
         )
-        badge_path = badges_dir / f"{username}.svg"
-        badge_path.write_text(svg, encoding="utf-8")
+        (badges_dir / f"{username}.svg").write_text(svg, encoding="utf-8")
+
+        # JSON badge (for shields.io endpoint — works with GitHub camo proxy)
+        badge_data = _badge_json(rank, pnl_pct, total_value, trade_count)
+        _save_json(badges_dir / f"{username}.json", badge_data)
+
         count += 1
 
     return count
