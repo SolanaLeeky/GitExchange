@@ -123,6 +123,15 @@
         "qty": 3,
         "price": 401.61
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-22T06:12:34Z",
+      "duration_s": 2.68,
+      "details": {
+        "result": "portfolio_view",
+        "user": "SolanaLeeky"
+      }
     }
   ]
 }
