@@ -248,6 +248,19 @@
         "result": "portfolio_view",
         "user": "SolanaLeeky"
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-22T08:13:47Z",
+      "duration_s": 3.15,
+      "details": {
+        "result": "executed",
+        "user": "SolanaLeeky",
+        "action": "BUY",
+        "ticker": "vscode",
+        "qty": 1,
+        "price": 574.8
+      }
     }
   ]
 }
