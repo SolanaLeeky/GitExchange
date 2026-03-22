@@ -16,7 +16,7 @@
 | **SVELTE** | sveltejs/svelte | $393.19 | +2.44% | 0 | $196.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+svelte+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+svelte+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **DENO** | denoland/deno | $309.76 | +6.59% | 0 | $154.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $99.22 | 0.00% | 0 | $49.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) |
-| **GSTACK** | garrytan/gstack | $72.70 | 0.00% | 0 | $36.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) |
+| **GSTACK** | garrytan/gstack | $72.70 | 0.00% | 10 | $36.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $63.92 | 0.00% | 0 | $32.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLI** | googleworkspace/cli | $44.94 | 0.00% | 0 | $22.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+cli+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+cli+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLIANYTHING** | HKUDS/CLI-Anything | $42.24 | 0.00% | 0 | $21.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clianything+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clianything+5&body=Adjust+quantity+in+the+title+then+submit) |
@@ -27,7 +27,7 @@
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $9,997.23 | -$2.77 (-0.0%) | 1 | 🔔 🎯 |
+| 🥇 | @SolanaLeeky | $9,996.50 | -$3.50 (-0.0%) | 2 | 🔔 🎯 |
 
 ---
 
@@ -41,6 +41,7 @@
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-22 03:50 | @SolanaLeeky | 📈 BUY | GSTACK | 10 | $72.70 | $727.00 |
 | 2026-03-22 03:42 | @SolanaLeeky | 📈 BUY | NEXTJS | 5 | $553.43 | $2,767.15 |
 
 ---
