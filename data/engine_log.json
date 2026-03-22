@@ -145,6 +145,19 @@
         "qty": 2,
         "price": 287.85
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-22T06:32:17Z",
+      "duration_s": 2.94,
+      "details": {
+        "result": "executed",
+        "user": "SolanaLeeky",
+        "action": "BUY",
+        "ticker": "vscode",
+        "qty": 1,
+        "price": 680.7
+      }
     }
   ]
 }

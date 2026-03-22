@@ -1,12 +1,16 @@
 {
   "username": "SolanaLeeky",
   "joined": "2026-03-22T03:42:41Z",
-  "cash": 7795.24,
+  "cash": 7113.86,
   "starting_cash": 10000,
   "portfolio": {
     "nextjs": {
       "qty": 5,
       "avg_cost": 553.43
+    },
+    "vscode": {
+      "qty": 1,
+      "avg_cost": 680.7
     }
   },
   "shorts": {
@@ -16,10 +20,10 @@
       "margin": 863.55
     }
   },
-  "total_value": 11409.34,
-  "pnl": 1409.34,
+  "total_value": 11408.66,
+  "pnl": 1408.66,
   "pnl_pct": 14.1,
-  "trade_count": 6,
+  "trade_count": 7,
   "rank": 0,
   "achievements": [
     "ipo-hunter",
