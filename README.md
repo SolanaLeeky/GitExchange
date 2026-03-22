@@ -18,7 +18,7 @@
 | **DENO** | denoland/deno | $287.85 | -7.07% | 0 | $143.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $238.83 | +140.71% | 0 | $119.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $216.43 | +238.60% | 0 | $108.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) |
-| **GSTACK** | garrytan/gstack | $216.10 | +197.25% | 10 | $108.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) |
+| **GSTACK** | garrytan/gstack | $216.10 | +197.25% | 20 | $108.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLI** | googleworkspace/cli | $201.38 | +348.11% | 0 | $100.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+cli+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+cli+5&body=Adjust+quantity+in+the+title+then+submit) |
 
 ---
@@ -27,7 +27,7 @@
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $11,412.70 | +$1,412.70 (+14.1%) | 3 | 🔔 🎯 |
+| 🥇 | @SolanaLeeky | $11,410.54 | +$1,410.54 (+14.1%) | 4 | 🔔 🎯 |
 
 ---
 
@@ -41,6 +41,7 @@
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-22 05:29 | @SolanaLeeky | 📉 SELL | GSTACK | 10 | $216.10 | $2,161.00 |
 | 2026-03-22 05:23 | @SolanaLeeky | 📈 BUY | SVELTE | 3 | $401.61 | $1,204.83 |
 | 2026-03-22 03:50 | @SolanaLeeky | 📈 BUY | GSTACK | 10 | $72.70 | $727.00 |
 | 2026-03-22 03:42 | @SolanaLeeky | 📈 BUY | NEXTJS | 5 | $553.43 | $2,767.15 |
