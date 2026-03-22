@@ -97,6 +97,19 @@
         "qty": 3,
         "price": 401.61
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-22T05:29:22Z",
+      "duration_s": 2.97,
+      "details": {
+        "result": "executed",
+        "user": "SolanaLeeky",
+        "action": "SELL",
+        "ticker": "gstack",
+        "qty": 10,
+        "price": 216.1
+      }
     }
   ]
 }
