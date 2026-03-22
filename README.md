@@ -56,7 +56,7 @@ Pick a stock and open a trade in one click:
 
 | Ticker | Name | Price | 24h Change | Volume | Market Cap | Trade |
 |--------|------|-------|------------|--------|------------|-------|
-| **VSCODE** | microsoft/vscode | $574.80 | 🔴 -15.56% | 1 | $287.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+vscode+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+vscode+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+vscode+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **VSCODE** | microsoft/vscode | $574.80 | 🔴 -15.56% | 2 | $287.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+vscode+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+vscode+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+vscode+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **REACT** | facebook/react | $562.76 | 🔴 -15.84% | 7 | $281.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+react+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **NEXTJS** | vercel/next.js | $548.67 | 🔴 -0.26% | 5 | $274.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $483.11 | 🟢 +123.22% | 0 | $241.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -73,7 +73,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $11,196.98 | +$1,196.98 (+12.0%) | 7 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $11,196.41 | +$1,196.41 (+12.0%) | 8 | 🎯 🐦 🦊 🔔 📄 |
 
 ---
 
@@ -87,6 +87,7 @@ Pick a stock and open a trade in one click:
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-22 07:11 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $574.80 | $574.80 |
 | 2026-03-22 06:32 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $680.70 | $680.70 |
 | 2026-03-22 06:24 | @SolanaLeeky | 📉 SHORT | DENO | 2 | $287.85 | $575.70 |
 | 2026-03-22 05:32 | @SolanaLeeky | 📉 SELL | SVELTE | 3 | $401.61 | $1,204.83 |
