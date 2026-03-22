@@ -303,7 +303,7 @@ def _apply_dark_theme(fig, ax):
 
 
 def generate_market_overview(market: dict) -> str | None:
-    """Generate market_overview.svg with sparklines for all stocks."""
+    """Generate market_overview.svg — single compact chart with top 5 stocks."""
     history = _load_price_history(7)
     stocks = market.get("stocks", {})
     active = {t: s for t, s in stocks.items() if s.get("market_status") != "DELISTED"}
@@ -311,34 +311,34 @@ def generate_market_overview(market: dict) -> str | None:
     if not active:
         return None
 
-    n = len(active)
-    fig, axes = plt.subplots(n, 1, figsize=(8, 1.8 * n), sharex=False)
-    if n == 1:
-        axes = [axes]
+    # Top 5 by market cap
+    top5 = sorted(active.items(), key=lambda x: x[1].get("market_cap", 0), reverse=True)[:5]
+    line_colors = ["#58a6ff", "#3fb950", "#f85149", "#d2a8ff", "#f0883e"]
 
-    for ax, (ticker, stock) in zip(axes, sorted(active.items())):
+    fig, ax = plt.subplots(figsize=(8, 3.5))
+    _apply_dark_theme(fig, ax)
+
+    for i, (ticker, stock) in enumerate(top5):
         prices = history.get(ticker, [stock["price"]])
         if len(prices) < 2:
             prices = [stock.get("prev_price", stock["price"]), stock["price"]]
 
-        color = CHART_STYLE["green"] if prices[-1] >= prices[0] else CHART_STYLE["red"]
-        ax.plot(prices, color=color, linewidth=2)
-        ax.fill_between(range(len(prices)), prices, alpha=0.1, color=color)
-
-        _apply_dark_theme(fig, ax)
-        ax.set_ylabel(ticker.upper(), color=CHART_STYLE["fg"], fontsize=10, fontweight="bold", rotation=0, labelpad=50)
+        color = line_colors[i % len(line_colors)]
+        ax.plot(prices, color=color, linewidth=2, label=ticker.upper())
 
         # Price label at the end
         ax.annotate(
             f"${prices[-1]:,.0f}",
             xy=(len(prices) - 1, prices[-1]),
-            fontsize=9, color=color, fontweight="bold",
+            fontsize=8, color=color, fontweight="bold",
             ha="left", va="center",
             xytext=(5, 0), textcoords="offset points",
         )
 
-    fig.suptitle("Market Overview — 7 Day", color=CHART_STYLE["fg"], fontsize=14, fontweight="bold", y=0.98)
-    fig.tight_layout(rect=[0, 0, 1, 0.96])
+    ax.legend(loc="upper right", fontsize=8, facecolor=CHART_STYLE["bg"],
+              edgecolor=CHART_STYLE["grid"], labelcolor=CHART_STYLE["fg"])
+    ax.set_title("Market Overview — Top 5", color=CHART_STYLE["fg"], fontsize=12, fontweight="bold")
+    fig.tight_layout()
 
     path = CHARTS_DIR / "market_overview.svg"
     fig.savefig(path, format="svg", facecolor=fig.get_facecolor(), bbox_inches="tight")
