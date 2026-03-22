@@ -174,7 +174,7 @@ Show off your trading stats on your GitHub profile! Open a `PORTFOLIO` issue to 
 
 **Example:**
 
-[![GitExchange](https://raw.githubusercontent.com/SolanaLeeky/GitExchange/main/docs/badges/SolanaLeeky.svg)](https://github.com/SolanaLeeky/GitExchange)
+[![GitExchange](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/SolanaLeeky/GitExchange/main/docs/badges/SolanaLeeky.json&cacheSeconds=3600)](https://github.com/SolanaLeeky/GitExchange)
 
 Your badge updates automatically with every price update — rank, P&L, portfolio value, and trade count stay current.
 
