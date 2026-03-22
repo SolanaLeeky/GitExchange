@@ -496,6 +496,23 @@ def format_portfolio(trader: dict, market: dict) -> str:
             lines.append(f"**{t_upper}**: [Buy]({buy_link}) | [Sell]({sell_link})")
         lines.append("")
 
+    # Profile Badge
+    username = trader["username"]
+    badge_url = f"https://solanaleaky.github.io/GitExchange/badges/{username}.svg"
+    badge_raw = f"https://raw.githubusercontent.com/SolanaLeeky/GitExchange/main/docs/badges/{username}.svg"
+    lines.extend([
+        "### Your Profile Badge",
+        "",
+        f"![GitExchange Badge]({badge_url})",
+        "",
+        "Add this to your GitHub profile README:",
+        "",
+        f"```markdown",
+        f"[![GitExchange]({badge_raw})](https://github.com/SolanaLeeky/GitExchange)",
+        f"```",
+        "",
+    ])
+
     return "\n".join(lines)
 
 

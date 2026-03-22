@@ -472,7 +472,95 @@ def generate_dashboard_data(market: dict) -> None:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 7. README ASSEMBLY
+# 7. PROFILE BADGES (per-trader SVG)
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def _badge_svg(username: str, rank: int, pnl_pct: float, total_value: float, trade_count: int) -> str:
+    """Generate a shields.io-style SVG badge for a trader."""
+    # Colors
+    if pnl_pct >= 50:
+        pnl_color = "#3fb950"  # green
+    elif pnl_pct >= 0:
+        pnl_color = "#58a6ff"  # blue
+    elif pnl_pct >= -20:
+        pnl_color = "#f0883e"  # orange
+    else:
+        pnl_color = "#f85149"  # red
+
+    rank_label = f"#{rank}" if rank <= 999 else "#999+"
+    pnl_sign = "+" if pnl_pct >= 0 else ""
+    pnl_label = f"{pnl_sign}{pnl_pct:.1f}%"
+
+    if total_value >= 1_000_000:
+        val_label = f"${total_value/1_000_000:.1f}M"
+    elif total_value >= 1_000:
+        val_label = f"${total_value/1_000:.1f}K"
+    else:
+        val_label = f"${total_value:.0f}"
+
+    # Badge dimensions
+    left_text = f"GitExchange {rank_label}"
+    right_text = f"{pnl_label}  {val_label}  {trade_count} trades"
+    left_width = len(left_text) * 6.5 + 16
+    right_width = len(right_text) * 6.2 + 16
+    total_width = left_width + right_width
+
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{total_width:.0f}" height="22" role="img" aria-label="{username} on GitExchange">
+  <title>{username} — Rank {rank_label} | P&amp;L {pnl_label} | {val_label} | {trade_count} trades</title>
+  <linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
+  <clipPath id="r"><rect width="{total_width:.0f}" height="22" rx="4" fill="#fff"/></clipPath>
+  <g clip-path="url(#r)">
+    <rect width="{left_width:.0f}" height="22" fill="#24292f"/>
+    <rect x="{left_width:.0f}" width="{right_width:.0f}" height="22" fill="{pnl_color}"/>
+    <rect width="{total_width:.0f}" height="22" fill="url(#s)"/>
+  </g>
+  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+    <text x="{left_width/2:.0f}" y="15" fill="#010101" fill-opacity=".3">{left_text}</text>
+    <text x="{left_width/2:.0f}" y="14">{left_text}</text>
+    <text x="{left_width + right_width/2:.0f}" y="15" fill="#010101" fill-opacity=".3">{right_text}</text>
+    <text x="{left_width + right_width/2:.0f}" y="14">{right_text}</text>
+  </g>
+</svg>'''
+
+
+def generate_profile_badges(market: dict) -> int:
+    """Generate SVG badges for all traders. Returns count generated."""
+    badges_dir = ROOT_DIR / "docs" / "badges"
+    badges_dir.mkdir(parents=True, exist_ok=True)
+
+    traders = list_traders()
+    if not traders:
+        return 0
+
+    # Build ranked list
+    trader_data = []
+    for username in traders:
+        t = load_trader(username)
+        update_trader_stats(t, market)
+        trader_data.append(t)
+
+    trader_data.sort(key=lambda t: t.get("total_value", 0), reverse=True)
+
+    count = 0
+    for rank, t in enumerate(trader_data, 1):
+        username = t["username"]
+        svg = _badge_svg(
+            username=username,
+            rank=rank,
+            pnl_pct=t.get("pnl_pct", 0),
+            total_value=t.get("total_value", 0),
+            trade_count=t.get("trade_count", 0),
+        )
+        badge_path = badges_dir / f"{username}.svg"
+        badge_path.write_text(svg, encoding="utf-8")
+        count += 1
+
+    return count
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 8. README ASSEMBLY
 # ═══════════════════════════════════════════════════════════════════════════
 
 
@@ -525,14 +613,18 @@ def main():
     print("Render engine")
     print("=" * 40)
 
-    print("\n[1/3] Generating charts...")
+    print("\n[1/4] Generating charts...")
     generate_all_charts(market)
 
-    print("\n[2/3] Generating README...")
+    print("\n[2/4] Generating README...")
     render_readme(market)
 
-    print("\n[3/3] Generating dashboard data...")
+    print("\n[3/4] Generating dashboard data...")
     generate_dashboard_data(market)
+
+    print("\n[4/4] Generating profile badges...")
+    badge_count = generate_profile_badges(market)
+    print(f"  {badge_count} badge(s) generated")
 
     print("\nDone.")
 
