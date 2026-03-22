@@ -1,6 +1,6 @@
 name: Short Stock
 description: Short sell a stock — bet that its price will drop
-title: "SHORT <ticker> <quantity>"
+title: "SHORT deno 10"
 labels: ["trade"]
 body:
   - type: markdown

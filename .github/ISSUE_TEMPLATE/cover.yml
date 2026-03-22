@@ -1,6 +1,6 @@
 name: Cover Short
 description: Close a short position — buy back borrowed shares to settle P&L
-title: "COVER <ticker> <quantity>"
+title: "COVER deno 10"
 labels: ["trade"]
 body:
   - type: markdown
