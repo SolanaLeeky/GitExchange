@@ -26,7 +26,7 @@
 | **NEXTJS** | vercel/next.js | $550.11 | 🔴 -0.60% | 5 | $275.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLIANYTHING** | HKUDS/CLI-Anything | $447.56 | ⚪ 0.00% | 0 | $223.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clianything+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clianything+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+clianything+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **SVELTE** | sveltejs/svelte | $401.61 | 🟢 +2.14% | 6 | $200.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+svelte+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+svelte+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+svelte+10&body=Adjust+quantity+in+the+title+then+submit) |
-| **DENO** | denoland/deno | $287.85 | 🔴 -7.07% | 0 | $143.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+deno+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **DENO** | denoland/deno | $287.85 | 🔴 -7.07% | 2 | $143.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+deno+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $238.83 | 🟢 +140.71% | 0 | $119.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $216.43 | 🟢 +238.60% | 0 | $108.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **GSTACK** | garrytan/gstack | $216.10 | 🟢 +197.25% | 20 | $108.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+gstack+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -38,7 +38,7 @@
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $11,409.34 | +$1,409.34 (+14.1%) | 5 | 🔔 🎯 |
+| 🥇 | @SolanaLeeky | $11,409.34 | +$1,409.34 (+14.1%) | 6 | 🔔 🎯 |
 
 ---
 
@@ -52,6 +52,7 @@
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-22 06:24 | @SolanaLeeky | 📉 SHORT | DENO | 2 | $287.85 | $575.70 |
 | 2026-03-22 05:32 | @SolanaLeeky | 📉 SELL | SVELTE | 3 | $401.61 | $1,204.83 |
 | 2026-03-22 05:29 | @SolanaLeeky | 📉 SELL | GSTACK | 10 | $216.10 | $2,161.00 |
 | 2026-03-22 05:23 | @SolanaLeeky | 📈 BUY | SVELTE | 3 | $401.61 | $1,204.83 |
