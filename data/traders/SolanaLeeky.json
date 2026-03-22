@@ -1,7 +1,7 @@
 {
   "username": "SolanaLeeky",
   "joined": "2026-03-22T03:42:41Z",
-  "cash": 8658.79,
+  "cash": 7795.24,
   "starting_cash": 10000,
   "portfolio": {
     "nextjs": {
@@ -9,11 +9,17 @@
       "avg_cost": 553.43
     }
   },
-  "shorts": {},
+  "shorts": {
+    "deno": {
+      "qty": 2,
+      "entry_price": 287.85,
+      "margin": 863.55
+    }
+  },
   "total_value": 11409.34,
   "pnl": 1409.34,
   "pnl_pct": 14.1,
-  "trade_count": 5,
+  "trade_count": 6,
   "rank": 0,
   "achievements": [
     "ipo-hunter",
