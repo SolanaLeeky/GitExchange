@@ -2,7 +2,7 @@
 
 > Trade open-source repos like stocks. Prices driven by real GitHub activity.
 
-🟢 **Market OPEN** | Total Cap: $1.40M | 5 Stocks | 0 Traders | Last Update: 2026-03-22 02:38 UTC
+🟢 **Market OPEN** | Total Cap: $1.40M | 5 Stocks | 1 Traders | Last Update: 2026-03-22 02:38 UTC
 
 ---
 
@@ -12,7 +12,7 @@
 |--------|------|-------|------------|--------|------------|-------|
 | **VSCODE** | microsoft/vscode | $840.78 | +1.43% | 0 | $420.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+vscode+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+vscode+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **REACT** | facebook/react | $694.65 | -1.17% | 7 | $347.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) |
-| **NEXTJS** | vercel/next.js | $553.43 | -2.10% | 0 | $276.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) |
+| **NEXTJS** | vercel/next.js | $553.43 | -2.10% | 5 | $276.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **SVELTE** | sveltejs/svelte | $393.19 | +2.44% | 0 | $196.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+svelte+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+svelte+5&body=Adjust+quantity+in+the+title+then+submit) |
 | **DENO** | denoland/deno | $309.76 | +6.59% | 0 | $154.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) / [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) |
 
@@ -20,7 +20,9 @@
 
 ## Leaderboard
 
-*No traders yet. Be the first to open an issue!*
+| Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
+|------|--------|-----------------|-----|--------|--------------|
+| 🥇 | @SolanaLeeky | $9,997.23 | -$2.77 (-0.0%) | 1 |  |
 
 ---
 
@@ -32,7 +34,9 @@
 
 ## Recent Trades
 
-*No trades yet.*
+| Time | Trader | Action | Stock | Qty | Price | Total |
+|------|--------|--------|-------|-----|-------|-------|
+| 2026-03-22 03:42 | @SolanaLeeky | 📈 BUY | NEXTJS | 5 | $553.43 | $2,767.15 |
 
 ---
 
