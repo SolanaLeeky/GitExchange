@@ -104,7 +104,7 @@ def process_ipos(market: dict, config: dict) -> list[dict]:
     # Search for recently created repos with high star velocity
     try:
         thirty_days_ago = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
-        query = f"stars:>{threshold} created:>{thirty_days_ago} language:python OR language:javascript OR language:typescript OR language:rust OR language:go"
+        query = f"stars:>{threshold} created:>{thirty_days_ago}"
         results = gh.search_repositories(query=query, sort="stars", order="desc")
 
         for repo in results[:5]:  # check top 5 trending

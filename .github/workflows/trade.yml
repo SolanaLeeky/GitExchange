@@ -28,7 +28,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install PyGithub
+        run: pip install PyGithub requests matplotlib
 
       - name: Execute trade
         env:
@@ -40,20 +40,27 @@ jobs:
         working-directory: engine
         run: python trade_engine.py
 
+      - name: Commit trade state
+        run: |
+          git config user.name "stock-bot"
+          git config user.email "bot@exchange.dev"
+          git add data/
+          git diff --cached --quiet || \
+            git commit -m "📈 Trade by @${{ github.event.issue.user.login }}"
+
       - name: Regenerate dashboard
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         working-directory: engine
         run: python render_engine.py
+        continue-on-error: true
 
       - name: Commit and push with retry
         run: |
-          git config user.name "stock-bot"
-          git config user.email "bot@exchange.dev"
           git add data/ charts/ README.md docs/
-          git diff --cached --quiet && exit 0
-          git commit -m "📈 Trade by @${{ github.event.issue.user.login }}"
+          git diff --cached --quiet || \
+            git commit -m "🔄 Update dashboard"
           for i in 1 2 3; do
             git push && break
             echo "Push failed (attempt $i), pulling and retrying..."
