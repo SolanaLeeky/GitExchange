@@ -53,3 +53,10 @@ body:
         - Short selling is an advanced strategy. If you are new, consider buying first.
         - Use `COVER` to close your short position and settle your profit or loss.
         - Watch for trending repos — a sudden spike in GitHub stars can drive prices up fast, hurting short sellers.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional context
+    validations:
+      required: false

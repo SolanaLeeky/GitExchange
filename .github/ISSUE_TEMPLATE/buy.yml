@@ -47,3 +47,10 @@ body:
         - **Diversify** — spreading across multiple tickers reduces your risk.
         - You need enough cash in your balance to cover `price x quantity`.
         - New players start with $10,000 in cash.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional context for your trade
+    validations:
+      required: false

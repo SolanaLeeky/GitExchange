@@ -47,3 +47,10 @@ body:
         - **Partial sells are fine** — you don't have to sell all your shares at once.
         - Your profit/loss is calculated as `(sell price - buy price) x quantity`.
         - There is no penalty for selling — it simply returns cash to your balance.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional context
+    validations:
+      required: false

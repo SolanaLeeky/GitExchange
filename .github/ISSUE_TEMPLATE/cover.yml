@@ -47,3 +47,10 @@ body:
         - **Partial covers are fine** — you can cover part of your short and leave the rest open.
         - **P&L formula:** `(short entry price - current price) x quantity`. Positive when the price dropped, negative when it rose.
         - If you are profitable on a short, covering locks in those gains as cash.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional context
+    validations:
+      required: false

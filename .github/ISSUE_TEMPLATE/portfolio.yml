@@ -50,3 +50,10 @@ body:
         - Review your portfolio regularly to track how your investments are performing.
         - Use portfolio data to decide your next move — buy more of winners, sell losers, or rebalance.
         - New to GitExchange? Everyone starts with $10,000 in cash. Open your portfolio to confirm your starting balance, then head to "Buy Stock" to make your first trade.
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes (optional)
+      description: Any additional context
+    validations:
+      required: false
