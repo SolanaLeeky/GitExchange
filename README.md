@@ -168,6 +168,18 @@ Momentum (trend-following, capped at 8%) and volatility (random +/-3%) are appli
 
 ---
 
+## Profile Badge
+
+Show off your trading stats on your GitHub profile! Open a `PORTFOLIO` issue to get your personalized badge with embed code.
+
+**Example:**
+
+[![GitExchange](https://raw.githubusercontent.com/SolanaLeeky/GitExchange/main/docs/badges/SolanaLeeky.svg)](https://github.com/SolanaLeeky/GitExchange)
+
+Your badge updates automatically with every price update — rank, P&L, portfolio value, and trade count stay current.
+
+---
+
 <div align="center">
 
 **GitExchange** -- Powered by GitHub Actions. Infrastructure cost: $0.
