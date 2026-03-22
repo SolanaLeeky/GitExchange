@@ -31,6 +31,31 @@ REPO_SLUG = os.environ.get("GITHUB_REPOSITORY", "SolanaLeeky/GitExchange")
 # ═══════════════════════════════════════════════════════════════════════════
 
 
+def render_daily_movers(market: dict) -> str:
+    """Return a markdown string showing the top gainer and top loser by change_pct."""
+    stocks = market.get("stocks", {})
+    active = {t: s for t, s in stocks.items() if s.get("market_status") != "DELISTED"}
+    if not active:
+        return "*No market data yet.*"
+
+    top_gainer = max(active.items(), key=lambda x: x[1].get("change_pct", 0))
+    top_loser = min(active.items(), key=lambda x: x[1].get("change_pct", 0))
+
+    g_ticker, g_data = top_gainer
+    g_pct = g_data.get("change_pct", 0)
+    g_price = g_data.get("price", 0)
+
+    l_ticker, l_data = top_loser
+    l_pct = l_data.get("change_pct", 0)
+    l_price = l_data.get("price", 0)
+
+    return (
+        f"\U0001f4c8 **Top Gainer**: {g_ticker.upper()} +{g_pct:.2f}% (${g_price:,.2f})"
+        f" | "
+        f"\U0001f4c9 **Top Loser**: {l_ticker.upper()} {l_pct:.2f}% (${l_price:,.2f})"
+    )
+
+
 def render_market_table(market: dict) -> str:
     """Markdown table of all stocks with Buy/Sell action links."""
     stocks = market.get("stocks", {})
@@ -136,6 +161,8 @@ def render_leaderboard(market: dict) -> str:
             "whale": "🐋",
             "survivor": "🛡️",
             "ipo-hunter": "🔔",
+            "contrarian": "🦊",
+            "early-bird": "🐦",
         }
         badges = " ".join(badge_map.get(a, "") for a in achievements[:5] if a in badge_map)
 
@@ -473,6 +500,7 @@ def render_readme(market: dict) -> None:
         "<!-- LEADERBOARD -->": render_leaderboard(market),
         "<!-- PRICE_CHART -->": price_chart,
         "<!-- RECENT_TRADES -->": render_recent_trades(),
+        "<!-- DAILY_MOVERS -->": render_daily_movers(market),
     }
 
     readme = template

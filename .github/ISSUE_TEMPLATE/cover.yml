@@ -1,17 +1,49 @@
 name: Cover Short
-description: Close a short position (buy back shares you shorted)
+description: Close a short position — buy back borrowed shares to settle P&L
 title: "COVER <ticker> <quantity>"
 labels: ["trade"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Cover Short Position
+        ## Cover a Short Position
+
+        Covering closes an existing short position. You buy back the shares you previously borrowed at the current market price. If the price dropped since you shorted, you profit. If it rose, you take a loss.
+
+        ### How to place your order
 
         Edit the **title** above:
-        - Replace `<ticker>` with the stock ticker
-        - Replace `<quantity>` with number of shares to cover
+        - Replace `<ticker>` with the ticker of a stock you are currently short on
+        - Replace `<quantity>` with the number of shares to cover (cannot exceed your short position size)
 
-        Example: `COVER deno 20`
+        **Example title:** `COVER deno 20`
 
-        Your short position will be closed and P&L settled.
+        Then click **Submit new issue** — your trade executes automatically and your P&L is settled.
+
+        ---
+
+        ### Available Tickers & Current Prices
+
+        | Ticker | Repository | Price |
+        |--------|-----------|-------|
+        | `react` | facebook/react | $668.66 |
+        | `vscode` | microsoft/vscode | $680.70 |
+        | `nextjs` | vercel/next.js | $550.11 |
+        | `clianything` | HKUDS/CLI-Anything | $447.56 |
+        | `svelte` | sveltejs/svelte | $401.61 |
+        | `deno` | denoland/deno | $287.85 |
+        | `autoresearch` | karpathy/autoresearch | $238.83 |
+        | `paperclip` | paperclipai/paperclip | $216.43 |
+        | `gstack` | garrytan/gstack | $216.10 |
+        | `cli` | googleworkspace/cli | $201.38 |
+
+        > Prices change as GitHub activity shifts. Check the [Market Dashboard](https://solanaleaky.github.io/GitExchange/) for live data.
+
+        ---
+
+        ### Tips
+
+        - **Check your portfolio first** — use the "View Portfolio" template to confirm your open short positions and their sizes.
+        - **Partial covers are fine** — you can cover part of your short and leave the rest open.
+        - **P&L formula:** `(short entry price - current price) x quantity`. Positive when the price dropped, negative when it rose.
+        - If you are profitable on a short, covering locks in those gains as cash.

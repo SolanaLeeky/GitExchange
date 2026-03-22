@@ -1,20 +1,55 @@
 name: Short Stock
-description: Short sell a stock (bet on price decrease)
+description: Short sell a stock — bet that its price will drop
 title: "SHORT <ticker> <quantity>"
 labels: ["trade"]
 body:
   - type: markdown
     attributes:
       value: |
-        ## Short Stock
+        ## Short Sell a Stock
+
+        Short selling lets you profit when a stock's price goes **down**. You borrow shares and sell them at today's price, then later buy them back (cover) at a lower price to pocket the difference.
+
+        ### How to place your order
 
         Edit the **title** above:
-        - Replace `<ticker>` with the stock ticker (e.g. `react`, `vscode`, `deno`)
-        - Replace `<quantity>` with number of shares to short
+        - Replace `<ticker>` with the ticker you want to short
+        - Replace `<quantity>` with the number of shares to short (whole numbers only)
 
-        Example: `SHORT deno 20`
+        **Example title:** `SHORT deno 20`
 
-        **Note**: Shorting requires 150% margin. If short interest exceeds 60%
-        and the price rises 10%+, a short squeeze will force-close your position.
+        Then click **Submit new issue** — your trade executes automatically.
 
-        Then click **Submit new issue**. Your trade will execute automatically.
+        ---
+
+        ### Available Tickers & Current Prices
+
+        | Ticker | Repository | Price |
+        |--------|-----------|-------|
+        | `react` | facebook/react | $668.66 |
+        | `vscode` | microsoft/vscode | $680.70 |
+        | `nextjs` | vercel/next.js | $550.11 |
+        | `clianything` | HKUDS/CLI-Anything | $447.56 |
+        | `svelte` | sveltejs/svelte | $401.61 |
+        | `deno` | denoland/deno | $287.85 |
+        | `autoresearch` | karpathy/autoresearch | $238.83 |
+        | `paperclip` | paperclipai/paperclip | $216.43 |
+        | `gstack` | garrytan/gstack | $216.10 |
+        | `cli` | googleworkspace/cli | $201.38 |
+
+        > Prices change as GitHub activity shifts. Check the [Market Dashboard](https://solanaleaky.github.io/GitExchange/) for live data.
+
+        ---
+
+        ### Risk Warnings
+
+        - **Losses can exceed your margin if the price spikes.** Unlike buying (where you can only lose what you paid), short losses are theoretically unlimited because there is no cap on how high a price can go.
+        - **150% margin required** — you must have 1.5x the short value in your account as collateral.
+        - **Short squeeze danger** — if short interest on a stock exceeds 60% and the price rises 10%+, a short squeeze triggers and your position is **force-closed** at the current (higher) price.
+
+        ### Tips
+
+        - **Start with small positions** — try shorting just 1-2 shares until you understand the mechanics.
+        - Short selling is an advanced strategy. If you are new, consider buying first.
+        - Use `COVER` to close your short position and settle your profit or loss.
+        - Watch for trending repos — a sudden spike in GitHub stars can drive prices up fast, hurting short sellers.

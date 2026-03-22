@@ -1,5 +1,5 @@
 name: Sell Stock
-description: Sell shares you own
+description: Sell shares you own to lock in profits or cut losses
 title: "SELL <ticker> <quantity>"
 labels: ["trade"]
 body:
@@ -8,10 +8,42 @@ body:
       value: |
         ## Sell Stock
 
+        Selling converts your shares back into cash at the current market price. Sell when you want to lock in a profit or cut your losses before a price drops further.
+
+        ### How to place your order
+
         Edit the **title** above:
-        - Replace `<ticker>` with the stock ticker (e.g. `react`, `vscode`, `deno`)
-        - Replace `<quantity>` with number of shares to sell
+        - Replace `<ticker>` with the ticker of a stock you currently own
+        - Replace `<quantity>` with the number of shares to sell (you cannot sell more than you hold)
 
-        Example: `SELL react 5`
+        **Example title:** `SELL react 5`
 
-        Then click **Submit new issue**. Your trade will execute automatically.
+        Then click **Submit new issue** — your trade executes automatically.
+
+        ---
+
+        ### Available Tickers & Current Prices
+
+        | Ticker | Repository | Price |
+        |--------|-----------|-------|
+        | `react` | facebook/react | $668.66 |
+        | `vscode` | microsoft/vscode | $680.70 |
+        | `nextjs` | vercel/next.js | $550.11 |
+        | `clianything` | HKUDS/CLI-Anything | $447.56 |
+        | `svelte` | sveltejs/svelte | $401.61 |
+        | `deno` | denoland/deno | $287.85 |
+        | `autoresearch` | karpathy/autoresearch | $238.83 |
+        | `paperclip` | paperclipai/paperclip | $216.43 |
+        | `gstack` | garrytan/gstack | $216.10 |
+        | `cli` | googleworkspace/cli | $201.38 |
+
+        > Prices change as GitHub activity shifts. Check the [Market Dashboard](https://solanaleaky.github.io/GitExchange/) for live data.
+
+        ---
+
+        ### Tips
+
+        - **Check your portfolio first** — use the "View Portfolio" template to see what you hold.
+        - **Partial sells are fine** — you don't have to sell all your shares at once.
+        - Your profit/loss is calculated as `(sell price - buy price) x quantity`.
+        - There is no penalty for selling — it simply returns cash to your balance.

@@ -1,5 +1,5 @@
 name: View Portfolio
-description: See your holdings, P&L, and achievements
+description: See your holdings, cash balance, P&L, and achievements — read-only, no risk
 title: "PORTFOLIO"
 labels: ["portfolio"]
 body:
@@ -8,10 +8,45 @@ body:
       value: |
         ## View Your Portfolio
 
-        Just click **Submit new issue** — no edits needed.
+        This is a **read-only** action. It does not place any trades, spend any cash, or change your positions in any way. There is **zero risk** — you are simply requesting a snapshot of your account.
 
-        You'll get a comment showing your:
-        - Cash balance and portfolio value
-        - All stock holdings with per-stock P&L
-        - Short positions
-        - Achievements earned
+        ### How to use
+
+        **No edits needed.** Just click **Submit new issue** and a comment will appear with your full portfolio summary.
+
+        ---
+
+        ### What you will see
+
+        - **Cash balance** — how much cash you have available to trade
+        - **Portfolio value** — total value of all your holdings at current market prices
+        - **Stock holdings** — every stock you own, with quantity, average cost, current price, and per-stock P&L
+        - **Short positions** — any open shorts, with entry price and unrealized P&L
+        - **Achievements** — badges you have earned through trading milestones
+
+        ---
+
+        ### Current Market Overview
+
+        | Ticker | Repository | Price |
+        |--------|-----------|-------|
+        | `react` | facebook/react | $668.66 |
+        | `vscode` | microsoft/vscode | $680.70 |
+        | `nextjs` | vercel/next.js | $550.11 |
+        | `clianything` | HKUDS/CLI-Anything | $447.56 |
+        | `svelte` | sveltejs/svelte | $401.61 |
+        | `deno` | denoland/deno | $287.85 |
+        | `autoresearch` | karpathy/autoresearch | $238.83 |
+        | `paperclip` | paperclipai/paperclip | $216.43 |
+        | `gstack` | garrytan/gstack | $216.10 |
+        | `cli` | googleworkspace/cli | $201.38 |
+
+        > Prices change as GitHub activity shifts. Check the [Market Dashboard](https://solanaleaky.github.io/GitExchange/) for live data.
+
+        ---
+
+        ### Tips
+
+        - Review your portfolio regularly to track how your investments are performing.
+        - Use portfolio data to decide your next move — buy more of winners, sell losers, or rebalance.
+        - New to GitExchange? Everyone starts with $10,000 in cash. Open your portfolio to confirm your starting balance, then head to "Buy Stock" to make your first trade.

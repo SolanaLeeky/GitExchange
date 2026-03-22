@@ -1,5 +1,5 @@
 name: Buy Stock
-description: Buy shares of a GitHub repo
+description: Purchase shares of a GitHub repo — grow your portfolio
 title: "BUY <ticker> <quantity>"
 labels: ["trade"]
 body:
@@ -8,10 +8,42 @@ body:
       value: |
         ## Buy Stock
 
+        Buying is the simplest way to invest. You spend cash from your balance to purchase shares of a GitHub repository. If the repo's price goes up, your shares are worth more and you profit when you sell.
+
+        ### How to place your order
+
         Edit the **title** above:
-        - Replace `<ticker>` with the stock ticker (e.g. `react`, `vscode`, `deno`)
-        - Replace `<quantity>` with number of shares (1-100)
+        - Replace `<ticker>` with a stock ticker from the table below (e.g. `react`, `nextjs`, `svelte`)
+        - Replace `<quantity>` with the number of shares you want (whole numbers only)
 
-        Example: `BUY react 10`
+        **Example title:** `BUY react 10`
 
-        Then click **Submit new issue**. Your trade will execute automatically.
+        Then click **Submit new issue** — your trade executes automatically.
+
+        ---
+
+        ### Available Tickers & Current Prices
+
+        | Ticker | Repository | Price |
+        |--------|-----------|-------|
+        | `react` | facebook/react | $668.66 |
+        | `vscode` | microsoft/vscode | $680.70 |
+        | `nextjs` | vercel/next.js | $550.11 |
+        | `clianything` | HKUDS/CLI-Anything | $447.56 |
+        | `svelte` | sveltejs/svelte | $401.61 |
+        | `deno` | denoland/deno | $287.85 |
+        | `autoresearch` | karpathy/autoresearch | $238.83 |
+        | `paperclip` | paperclipai/paperclip | $216.43 |
+        | `gstack` | garrytan/gstack | $216.10 |
+        | `cli` | googleworkspace/cli | $201.38 |
+
+        > Prices change as GitHub activity shifts. Check the [Market Dashboard](https://solanaleaky.github.io/GitExchange/) for live data.
+
+        ---
+
+        ### Tips
+
+        - **Start small** — try buying 1-5 shares to learn how the market works.
+        - **Diversify** — spreading across multiple tickers reduces your risk.
+        - You need enough cash in your balance to cover `price x quantity`.
+        - New players start with $10,000 in cash.

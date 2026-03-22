@@ -361,6 +361,44 @@ def process_short_squeezes(market: dict, config: dict) -> list[dict]:
 # 5. ACHIEVEMENT SCANNER
 # ═══════════════════════════════════════════════════════════════════════════
 
+def _is_contrarian(trader: dict, trades: list[dict] | None, market: dict | None) -> bool:
+    """Returns True if the trader bought a stock whose change_pct was less than -5%."""
+    if not trades or not market:
+        return False
+    stocks = market.get("stocks", {})
+    for t in trades:
+        if t.get("user") != trader.get("username"):
+            continue
+        if t.get("action") != "BUY":
+            continue
+        ticker = t.get("ticker", "")
+        change_pct = stocks.get(ticker, {}).get("change_pct", 0)
+        if change_pct < -5:
+            return True
+    return False
+
+
+def _is_early_bird(trades: list[dict] | None, trader: dict) -> bool:
+    """Returns True if any trade happened within the first 60 minutes of a 6-hour price cycle.
+
+    Price cycles start at hours 0, 6, 12, 18 UTC. The first 60 minutes of each
+    cycle are minutes 0-59 of those hours.
+    """
+    if not trades:
+        return False
+    cycle_hours = {0, 6, 12, 18}
+    for t in trades:
+        if t.get("user") != trader.get("username"):
+            continue
+        try:
+            ts = datetime.fromisoformat(t["timestamp"].replace("Z", "+00:00"))
+            if ts.hour in cycle_hours and ts.minute < 60:
+                return True
+        except (ValueError, KeyError):
+            continue
+    return False
+
+
 ACHIEVEMENTS = [
     ("first-trade",   lambda t, **_: t.get("trade_count", 0) >= 1),
     ("100-trades",    lambda t, **_: t.get("trade_count", 0) >= 100),
@@ -371,6 +409,8 @@ ACHIEVEMENTS = [
     ("paper-hands",   lambda t, trades=None, **_: _has_paper_hands(t, trades)),
     ("short-king",    lambda t, **_: _short_profit(t) >= 5000),
     ("ipo-hunter",    lambda t, trades=None, market=None, **_: _is_ipo_hunter(t, trades, market)),
+    ("contrarian",    lambda t, trades=None, market=None, **_: _is_contrarian(t, trades, market)),
+    ("early-bird",    lambda t, trades=None, **_: _is_early_bird(trades, t)),
 ]
 
 

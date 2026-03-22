@@ -349,6 +349,41 @@ def format_receipt(trade: dict, trader: dict, market: dict) -> str:
         "",
         f"*Trade #{trader['trade_count']} by @{trader['username']}*",
     ])
+
+    # Context line: position summary for BUY, realized P&L for SELL
+    ticker = trade["ticker"]
+    ticker_upper = ticker.upper()
+    base_url = "https://github.com/SolanaLeeky/GitExchange/issues/new"
+
+    if trade["action"] == "BUY":
+        pos = trader.get("portfolio", {}).get(ticker, {})
+        total_qty = pos.get("qty", trade["qty"])
+        avg_cost = pos.get("avg_cost", trade["price"])
+        lines.extend([
+            "",
+            f"> You now hold **{total_qty} total shares** of **{ticker_upper}** at **${avg_cost:,.2f}** avg cost.",
+        ])
+    elif trade["action"] == "SELL":
+        # Recompute the same P&L shown in the table for the context line
+        avg_cost = trader.get("portfolio", {}).get(ticker, {}).get("avg_cost", trade["price"])
+        pnl = round((trade["price"] - avg_cost) * trade["qty"] - trade["fee"], 2)
+        pnl_label = f"+${pnl:,.2f}" if pnl >= 0 else f"-${abs(pnl):,.2f}"
+        pnl_word = "profit" if pnl >= 0 else "loss"
+        lines.extend([
+            "",
+            f"> Realized **{pnl_label}** {pnl_word} on this sale of **{trade['qty']} {ticker_upper}**.",
+        ])
+
+    # Quick Actions footer
+    lines.extend([
+        "",
+        "---",
+        f"**Quick Actions:** "
+        f"[View Portfolio]({base_url}?title=PORTFOLIO&body=Check+my+holdings)"
+        f" | "
+        f"[Buy More {ticker_upper}]({base_url}?title=BUY+{ticker}+10&body=Adjust+quantity+in+the+title+then+submit)",
+    ])
+
     return "\n".join(lines)
 
 
@@ -425,12 +460,78 @@ def format_portfolio(trader: dict, market: dict) -> str:
         badge_list = ", ".join(badge_map.get(a, a) for a in achievements)
         lines.extend(["### Achievements", "", badge_list, ""])
 
+    # Top Performer / Worst Performer
+    base_url = "https://github.com/SolanaLeeky/GitExchange/issues/new"
+    if portfolio:
+        perf = {}
+        for ticker, pos in portfolio.items():
+            avg = pos["avg_cost"]
+            current = stocks.get(ticker, {}).get("price", 0)
+            pnl_pct = round(((current - avg) / avg) * 100, 1) if avg > 0 else 0.0
+            perf[ticker] = pnl_pct
+
+        best_ticker = max(perf, key=perf.get)
+        worst_ticker = min(perf, key=perf.get)
+        best_pct = perf[best_ticker]
+        worst_pct = perf[worst_ticker]
+
+        best_sign = "+" if best_pct >= 0 else ""
+        worst_sign = "+" if worst_pct >= 0 else ""
+
+        lines.extend([
+            f"🏆 **Top Performer:** {best_ticker.upper()} ({best_sign}{best_pct:.1f}%)"
+            f"  &nbsp;|&nbsp;  "
+            f"📉 **Worst Performer:** {worst_ticker.upper()} ({worst_sign}{worst_pct:.1f}%)",
+            "",
+        ])
+
+    # Quick Actions per held stock
+    if portfolio:
+        lines.append("### Quick Actions")
+        lines.append("")
+        for ticker in sorted(portfolio.keys()):
+            t_upper = ticker.upper()
+            buy_link = f"{base_url}?title=BUY+{ticker}+10&body=Adjust+quantity+in+the+title+then+submit"
+            sell_link = f"{base_url}?title=SELL+{ticker}+5&body=Adjust+quantity+in+the+title+then+submit"
+            lines.append(f"**{t_upper}**: [Buy]({buy_link}) | [Sell]({sell_link})")
+        lines.append("")
+
     return "\n".join(lines)
 
 
 def format_rejection(reason: str) -> str:
     """Markdown rejection comment."""
-    return f"## Trade Rejected\n\n{reason}\n\nPlease check your trade and try again."
+    # Build a contextual tip based on common rejection reasons
+    reason_lower = reason.lower()
+    if "insufficient cash" in reason_lower or "insufficient margin" in reason_lower:
+        tip = "Try a smaller quantity, or sell an existing position to free up cash."
+    elif "not found" in reason_lower:
+        tip = "Double-check the ticker symbol. Use `PORTFOLIO` to see what is available."
+    elif "rate limit" in reason_lower:
+        tip = "Take a breather. You can submit more trades in a few minutes."
+    elif "duplicate" in reason_lower:
+        tip = "Your previous trade is already being processed. No need to resubmit."
+    elif "could not parse" in reason_lower:
+        tip = "Format your issue title like: `BUY react 10` or `SELL nextjs 5`."
+    elif "closed" in reason_lower:
+        tip = "The market reopens after the next price update. Check back soon."
+    elif "position limit" in reason_lower:
+        tip = "Diversify! Spread your trades across multiple stocks to stay within limits."
+    elif "account" in reason_lower and "day" in reason_lower:
+        tip = "This safeguard protects the exchange. Your account will be eligible soon."
+    elif "only hold" in reason_lower or "only have" in reason_lower:
+        tip = "Use `PORTFOLIO` to check your current holdings before selling or covering."
+    elif "delisted" in reason_lower:
+        tip = "This stock has been removed from the exchange and can no longer be traded."
+    else:
+        tip = "Review the command format and your current portfolio, then try again."
+
+    return (
+        f"## ❌ Trade Rejected\n\n"
+        f"{reason}\n\n"
+        f"💡 **Tip:** {tip}\n\n"
+        f"[📖 Read the trading rules](https://github.com/SolanaLeeky/GitExchange#rules)"
+    )
 
 
 # ---------------------------------------------------------------------------
