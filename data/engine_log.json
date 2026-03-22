@@ -61,6 +61,16 @@
         "qty": 10,
         "price": 72.7
       }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-03-22T03:53:39Z",
+      "duration_s": 43.76,
+      "details": {
+        "stocks_updated": 10,
+        "traders_recalculated": 1,
+        "api_failures": 10
+      }
     }
   ]
 }
