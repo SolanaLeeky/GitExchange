@@ -261,6 +261,19 @@
         "qty": 1,
         "price": 574.8
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-22T11:21:13Z",
+      "duration_s": 3.56,
+      "details": {
+        "result": "executed",
+        "user": "SolanaLeeky",
+        "action": "BUY",
+        "ticker": "react",
+        "qty": 5,
+        "price": 562.76
+      }
     }
   ]
 }
