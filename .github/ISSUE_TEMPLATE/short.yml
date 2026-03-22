@@ -1,0 +1,20 @@
+name: Short Stock
+description: Short sell a stock (bet on price decrease)
+title: "SHORT <ticker> <quantity>"
+labels: ["trade"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Short Stock
+
+        Edit the **title** above:
+        - Replace `<ticker>` with the stock ticker (e.g. `react`, `vscode`, `deno`)
+        - Replace `<quantity>` with number of shares to short
+
+        Example: `SHORT deno 20`
+
+        **Note**: Shorting requires 150% margin. If short interest exceeds 60%
+        and the price rises 10%+, a short squeeze will force-close your position.
+
+        Then click **Submit new issue**. Your trade will execute automatically.

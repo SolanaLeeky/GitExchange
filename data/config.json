@@ -1,0 +1,26 @@
+{
+  "starting_cash": 10000,
+  "max_position_pct": 0.40,
+  "short_margin_pct": 1.50,
+  "min_trade_qty": 1,
+  "max_trade_qty": 100,
+  "trading_fee_pct": 0.001,
+  "price_weights": {
+    "stars": 0.30,
+    "commits_week": 0.25,
+    "forks": 0.15,
+    "issue_response": 0.15,
+    "contributors": 0.15
+  },
+  "dividend_threshold_commits": 50,
+  "ipo_threshold_stars": 1000,
+  "volatility_range": 0.03,
+  "momentum_range": 0.08,
+  "listed_repos": [
+    "facebook/react",
+    "microsoft/vscode",
+    "denoland/deno",
+    "vercel/next.js",
+    "sveltejs/svelte"
+  ]
+}

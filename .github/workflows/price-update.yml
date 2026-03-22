@@ -1,0 +1,53 @@
+name: Price Update
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: trade-execution
+  cancel-in-progress: false
+
+jobs:
+  update_prices:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install PyGithub requests matplotlib
+
+      - name: Fetch metrics and recalculate prices
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        working-directory: engine
+        run: python price_engine.py
+
+      - name: Regenerate dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        working-directory: engine
+        run: python render_engine.py
+
+      - name: Commit and push with retry
+        run: |
+          git config user.name "stock-bot"
+          git config user.email "bot@exchange.dev"
+          git add data/ charts/ README.md docs/
+          git diff --cached --quiet && exit 0
+          git commit -m "💹 Price update $(date -u +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git push && break
+            echo "Push failed (attempt $i), pulling and retrying..."
+            git pull --rebase
+            sleep 2
+          done

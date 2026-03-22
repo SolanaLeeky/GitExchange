@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitExchange — The GitHub Stock Market</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --fg: #c9d1d9;
+      --fg-muted: #8b949e;
+      --green: #3fb950;
+      --red: #f85149;
+      --blue: #58a6ff;
+      --accent: #1f6feb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    header p { color: var(--fg-muted); font-size: 1.1em; }
+
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-value {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: var(--blue);
+    }
+
+    .stat-label {
+      font-size: 0.85em;
+      color: var(--fg-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      margin: 40px 0 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .stock-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+
+    .stock-card:hover { border-color: var(--accent); }
+
+    .stock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .stock-ticker {
+      font-size: 1.3em;
+      font-weight: bold;
+    }
+
+    .stock-name {
+      font-size: 0.85em;
+      color: var(--fg-muted);
+    }
+
+    .stock-price {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .stock-change {
+      font-size: 0.9em;
+      font-weight: 600;
+    }
+
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+
+    .stock-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 12px 0;
+      font-size: 0.85em;
+    }
+
+    .metric-item {
+      text-align: center;
+      padding: 6px;
+      background: var(--bg);
+      border-radius: 4px;
+    }
+
+    .metric-value { font-weight: bold; }
+    .metric-label { color: var(--fg-muted); font-size: 0.8em; }
+
+    .stock-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9em;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+    .btn-buy { background: var(--green); }
+    .btn-sell { background: var(--red); }
+    .btn-short { background: var(--fg-muted); }
+
+    .chart-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--fg-muted);
+      font-weight: 600;
+      font-size: 0.85em;
+      text-transform: uppercase;
+    }
+
+    tr:hover { background: var(--surface); }
+
+    .loading {
+      text-align: center;
+      padding: 60px;
+      color: var(--fg-muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--fg-muted);
+      font-size: 0.85em;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8em; }
+      .stats-bar { gap: 20px; }
+      .stock-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GitExchange</h1>
+    <p>The GitHub Stock Market — trade open-source repos like stocks</p>
+    <div class="stats-bar">
+      <div class="stat">
+        <div class="stat-value" id="total-cap">--</div>
+        <div class="stat-label">Market Cap</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="stock-count">--</div>
+        <div class="stat-label">Stocks</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="trader-count">--</div>
+        <div class="stat-label">Traders</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value" id="market-status">--</div>
+        <div class="stat-label">Status</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Stocks</h2>
+    <div id="stock-grid" class="stock-grid">
+      <div class="loading">Loading market data...</div>
+    </div>
+
+    <h2>Price History</h2>
+    <div class="chart-container">
+      <canvas id="price-chart" height="300"></canvas>
+    </div>
+
+    <h2>Recent Trades</h2>
+    <div id="trades-table">
+      <div class="loading">Loading trades...</div>
+    </div>
+
+    <h2>How to Trade</h2>
+    <table>
+      <tr><th>Action</th><th>Issue Title Format</th><th>Example</th></tr>
+      <tr><td>Buy</td><td><code>BUY &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>BUY react 10</code></td></tr>
+      <tr><td>Sell</td><td><code>SELL &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>SELL vscode 5</code></td></tr>
+      <tr><td>Short</td><td><code>SHORT &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>SHORT deno 20</code></td></tr>
+      <tr><td>Cover</td><td><code>COVER &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>COVER deno 20</code></td></tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>Powered by GitHub Actions &middot; Infrastructure cost: $0</p>
+    <p>Prices update every 6 hours based on real GitHub API metrics</p>
+  </footer>
+
+  <script>
+    const REPO = 'SolanaLeeky/GitExchange';
+    const BASE = '..';
+
+    async function loadJSON(path) {
+      try {
+        const res = await fetch(`${BASE}/${path}`);
+        if (!res.ok) return null;
+        return await res.json();
+      } catch { return null; }
+    }
+
+    function formatCurrency(n) {
+      if (n >= 1e6) return `$${(n/1e6).toFixed(2)}M`;
+      if (n >= 1e3) return `$${(n/1e3).toFixed(1)}K`;
+      return `$${n.toFixed(2)}`;
+    }
+
+    async function renderStocks() {
+      const market = await loadJSON('data/market.json');
+      if (!market) { document.getElementById('stock-grid').innerHTML = '<p>Could not load market data.</p>'; return; }
+
+      // Stats bar
+      const stocks = market.stocks || {};
+      const active = Object.entries(stocks).filter(([,s]) => s.market_status !== 'DELISTED');
+      document.getElementById('total-cap').textContent = formatCurrency(market.total_market_cap || 0);
+      document.getElementById('stock-count').textContent = active.length;
+      document.getElementById('market-status').textContent = (market.market_status || 'unknown').toUpperCase();
+
+      // Stock cards
+      const grid = document.getElementById('stock-grid');
+      grid.innerHTML = '';
+
+      const sorted = active.sort((a, b) => (b[1].market_cap || 0) - (a[1].market_cap || 0));
+
+      for (const [ticker, s] of sorted) {
+        const change = s.change_pct || 0;
+        const changeClass = change >= 0 ? 'positive' : 'negative';
+        const changeStr = change >= 0 ? `+${change.toFixed(2)}%` : `${change.toFixed(2)}%`;
+        const m = s.metrics || {};
+
+        const card = document.createElement('div');
+        card.className = 'stock-card';
+        card.innerHTML = `
+          <div class="stock-header">
+            <div>
+              <div class="stock-ticker">${ticker.toUpperCase()}</div>
+              <div class="stock-name">${s.full_name || ticker}</div>
+            </div>
+            <div style="text-align:right">
+              <div class="stock-price">$${s.price.toLocaleString(undefined, {minimumFractionDigits:2})}</div>
+              <div class="stock-change ${changeClass}">${changeStr}</div>
+            </div>
+          </div>
+          <div class="stock-metrics">
+            <div class="metric-item"><div class="metric-value">${(m.stars||0).toLocaleString()}</div><div class="metric-label">Stars</div></div>
+            <div class="metric-item"><div class="metric-value">${(m.forks||0).toLocaleString()}</div><div class="metric-label">Forks</div></div>
+            <div class="metric-item"><div class="metric-value">${m.commits_week||0}</div><div class="metric-label">Commits/wk</div></div>
+          </div>
+          <div class="stock-actions">
+            <a class="btn btn-buy" href="https://github.com/${REPO}/issues/new?title=BUY+${ticker}+10&body=Adjust+quantity+then+submit">Buy</a>
+            <a class="btn btn-sell" href="https://github.com/${REPO}/issues/new?title=SELL+${ticker}+5&body=Adjust+quantity+then+submit">Sell</a>
+            <a class="btn btn-short" href="https://github.com/${REPO}/issues/new?title=SHORT+${ticker}+10&body=Adjust+quantity+then+submit">Short</a>
+          </div>
+        `;
+        grid.appendChild(card);
+      }
+
+      // Price chart
+      renderPriceChart(sorted);
+    }
+
+    function renderPriceChart(stocks) {
+      const ctx = document.getElementById('price-chart').getContext('2d');
+      const colors = ['#58a6ff', '#3fb950', '#f85149', '#d2a8ff', '#f0883e'];
+
+      const datasets = stocks.map(([ticker, s], i) => ({
+        label: ticker.toUpperCase(),
+        data: [s.prev_price || s.price, s.price],
+        borderColor: colors[i % colors.length],
+        backgroundColor: 'transparent',
+        tension: 0.3,
+        borderWidth: 2,
+        pointRadius: 3,
+      }));
+
+      new Chart(ctx, {
+        type: 'line',
+        data: { labels: ['Previous', 'Current'], datasets },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: '#c9d1d9' } },
+          },
+          scales: {
+            x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
+            y: { ticks: { color: '#8b949e', callback: v => '$' + v }, grid: { color: '#21262d' } },
+          },
+        },
+      });
+    }
+
+    async function renderTrades() {
+      const today = new Date().toISOString().slice(0, 10);
+      const data = await loadJSON(`data/history/trades/${today}.json`);
+      const container = document.getElementById('trades-table');
+
+      if (!data || !data.trades || data.trades.length === 0) {
+        container.innerHTML = '<p style="color:var(--fg-muted)">No trades today.</p>';
+        return;
+      }
+
+      const trades = data.trades.slice(-20).reverse();
+      let html = '<table><tr><th>Time</th><th>Trader</th><th>Action</th><th>Stock</th><th>Qty</th><th>Price</th><th>Total</th></tr>';
+      for (const t of trades) {
+        const time = (t.timestamp || '').slice(11, 16);
+        const actionClass = (t.action === 'BUY' || t.action === 'COVER') ? 'positive' : 'negative';
+        html += `<tr>
+          <td>${time}</td>
+          <td>@${t.user}</td>
+          <td class="${actionClass}">${t.action}</td>
+          <td>${(t.ticker||'').toUpperCase()}</td>
+          <td>${t.qty}</td>
+          <td>$${(t.price||0).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
+          <td>$${(t.total||0).toLocaleString(undefined,{minimumFractionDigits:2})}</td>
+        </tr>`;
+      }
+      html += '</table>';
+      container.innerHTML = html;
+    }
+
+    // Trader count (count files in traders dir — not possible via static site,
+    // so just show '--' unless we embed it during render)
+    renderStocks();
+    renderTrades();
+  </script>
+</body>
+</html>

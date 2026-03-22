@@ -1,0 +1,62 @@
+name: Trade
+
+on:
+  issues:
+    types: [opened]
+
+concurrency:
+  group: trade-execution
+  cancel-in-progress: false
+
+jobs:
+  execute_trade:
+    if: |
+      startsWith(github.event.issue.title, 'BUY') ||
+      startsWith(github.event.issue.title, 'SELL') ||
+      startsWith(github.event.issue.title, 'SHORT') ||
+      startsWith(github.event.issue.title, 'COVER')
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install PyGithub
+
+      - name: Execute trade
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        working-directory: engine
+        run: python trade_engine.py
+
+      - name: Regenerate dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        working-directory: engine
+        run: python render_engine.py
+
+      - name: Commit and push with retry
+        run: |
+          git config user.name "stock-bot"
+          git config user.email "bot@exchange.dev"
+          git add data/ charts/ README.md docs/
+          git diff --cached --quiet && exit 0
+          git commit -m "📈 Trade by @${{ github.event.issue.user.login }}"
+          for i in 1 2 3; do
+            git push && break
+            echo "Push failed (attempt $i), pulling and retrying..."
+            git pull --rebase
+            sleep 2
+          done

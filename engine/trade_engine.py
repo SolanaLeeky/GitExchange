@@ -1,0 +1,448 @@
+#!/usr/bin/env python3
+"""Trade engine: parse issue title, validate, execute BUY/SELL/SHORT/COVER,
+update trader state, post receipt, close issue.
+
+Includes abuse protection: account age, rate limiting, duplicate detection."""
+
+import os
+import re
+import sys
+import time as _time
+from datetime import datetime, timezone
+
+from utils import (
+    load_config,
+    load_market,
+    save_market,
+    load_trader,
+    save_trader,
+    update_trader_stats,
+    append_trade_history,
+    post_issue_comment,
+    close_issue,
+    get_user_account_age_days,
+    validate_state,
+    log_engine_run,
+    now_iso,
+    today_str,
+    load_json,
+    HISTORY_DIR,
+)
+
+# ---------------------------------------------------------------------------
+# Parsing
+# ---------------------------------------------------------------------------
+
+TRADE_REGEX = re.compile(r"^(BUY|SELL|SHORT|COVER)\s+(\w+)\s+(\d+)$", re.IGNORECASE)
+
+
+def parse_trade(title: str) -> tuple[str, str, int] | None:
+    """Parse issue title into (action, ticker, quantity) or None."""
+    m = TRADE_REGEX.match(title.strip())
+    if not m:
+        return None
+    action = m.group(1).upper()
+    ticker = m.group(2).lower()
+    qty = int(m.group(3))
+    return action, ticker, qty
+
+
+# ---------------------------------------------------------------------------
+# Abuse protection
+# ---------------------------------------------------------------------------
+
+MIN_ACCOUNT_AGE_DAYS = 7
+MAX_TRADES_PER_HOUR = 5
+DUPLICATE_WINDOW_SECONDS = 300  # 5 minutes
+
+
+def check_account_age(username: str) -> str | None:
+    """Reject accounts younger than 7 days. Returns error or None."""
+    age = get_user_account_age_days(username)
+    if age is not None and age < MIN_ACCOUNT_AGE_DAYS:
+        return (
+            f"Your GitHub account is {age} day(s) old. "
+            f"Accounts must be at least {MIN_ACCOUNT_AGE_DAYS} days old to trade."
+        )
+    return None
+
+
+def check_rate_limit_user(username: str) -> str | None:
+    """Max 5 trades per user per hour. Returns error or None."""
+    trades_path = HISTORY_DIR / "trades" / f"{today_str()}.json"
+    data = load_json(trades_path)
+    trades = data.get("trades", []) if data else []
+
+    now = datetime.now(timezone.utc)
+    one_hour_ago = now.timestamp() - 3600
+
+    count = 0
+    for t in trades:
+        if t.get("user") != username:
+            continue
+        try:
+            ts = datetime.fromisoformat(t["timestamp"].replace("Z", "+00:00"))
+            if ts.timestamp() > one_hour_ago:
+                count += 1
+        except (ValueError, KeyError):
+            continue
+
+    if count >= MAX_TRADES_PER_HOUR:
+        return f"Rate limit: max {MAX_TRADES_PER_HOUR} trades per hour. Try again later."
+    return None
+
+
+def check_duplicate_trade(username: str, action: str, ticker: str) -> str | None:
+    """Reject identical trade (same user+action+ticker) within 5 minutes."""
+    trades_path = HISTORY_DIR / "trades" / f"{today_str()}.json"
+    data = load_json(trades_path)
+    trades = data.get("trades", []) if data else []
+
+    now = datetime.now(timezone.utc)
+    cutoff = now.timestamp() - DUPLICATE_WINDOW_SECONDS
+
+    for t in reversed(trades):
+        if t.get("user") != username:
+            continue
+        try:
+            ts = datetime.fromisoformat(t["timestamp"].replace("Z", "+00:00"))
+            if ts.timestamp() < cutoff:
+                break  # older trades, stop checking
+        except (ValueError, KeyError):
+            continue
+        if t.get("action") == action and t.get("ticker") == ticker:
+            return (
+                f"Duplicate trade detected: you already submitted {action} {ticker} "
+                f"within the last {DUPLICATE_WINDOW_SECONDS // 60} minutes."
+            )
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Validation
+# ---------------------------------------------------------------------------
+
+
+def validate_trade(
+    action: str,
+    ticker: str,
+    qty: int,
+    trader: dict,
+    market: dict,
+    config: dict,
+) -> str | None:
+    """Return error message string if trade is invalid, else None."""
+    stocks = market.get("stocks", {})
+
+    # Ticker exists?
+    if ticker not in stocks:
+        available = ", ".join(sorted(stocks.keys()))
+        return f"Ticker `{ticker}` not found. Available: {available}"
+
+    # Market open?
+    if market.get("market_status") != "open":
+        return "Market is currently closed."
+
+    # Delisted?
+    stock = stocks[ticker]
+    if stock.get("market_status") == "DELISTED":
+        return f"Stock `{ticker}` has been delisted and cannot be traded."
+
+    price = stock["price"]
+
+    # Quantity bounds
+    min_qty = config.get("min_trade_qty", 1)
+    max_qty = config.get("max_trade_qty", 100)
+    if qty < min_qty or qty > max_qty:
+        return f"Quantity must be between {min_qty} and {max_qty}."
+
+    fee_pct = config.get("trading_fee_pct", 0.001)
+
+    if action == "BUY":
+        total_cost = price * qty * (1 + fee_pct)
+        if trader["cash"] < total_cost:
+            return (
+                f"Insufficient cash. Need ${total_cost:,.2f} "
+                f"but you have ${trader['cash']:,.2f}."
+            )
+        # Position limit
+        current_qty = trader.get("portfolio", {}).get(ticker, {}).get("qty", 0)
+        new_qty = current_qty + qty
+        position_value = new_qty * price
+        total_value = max(trader.get("total_value", trader["cash"]), 1)
+        max_pct = config.get("max_position_pct", 0.40)
+        if position_value / total_value > max_pct:
+            return (
+                f"Position limit exceeded. Max {max_pct*100:.0f}% of portfolio "
+                f"in one stock (${position_value:,.2f} / ${total_value:,.2f})."
+            )
+
+    elif action == "SELL":
+        held = trader.get("portfolio", {}).get(ticker, {}).get("qty", 0)
+        if held < qty:
+            return f"You only hold {held} shares of {ticker}."
+
+    elif action == "SHORT":
+        margin_pct = config.get("short_margin_pct", 1.50)
+        margin_required = price * qty * margin_pct
+        if trader["cash"] < margin_required:
+            return (
+                f"Insufficient margin. Need ${margin_required:,.2f} "
+                f"({margin_pct*100:.0f}% margin) but you have ${trader['cash']:,.2f}."
+            )
+
+    elif action == "COVER":
+        shorted = trader.get("shorts", {}).get(ticker, {}).get("qty", 0)
+        if shorted < qty:
+            return f"You only have {shorted} shares shorted on {ticker}."
+
+    return None
+
+
+# ---------------------------------------------------------------------------
+# Execution
+# ---------------------------------------------------------------------------
+
+
+def execute_trade(
+    action: str,
+    ticker: str,
+    qty: int,
+    trader: dict,
+    market: dict,
+    config: dict,
+) -> dict:
+    """Execute the trade, mutating trader and market in place.
+    Returns a trade record dict."""
+    stock = market["stocks"][ticker]
+    price = stock["price"]
+    fee_pct = config.get("trading_fee_pct", 0.001)
+    fee = round(price * qty * fee_pct, 2)
+    total = round(price * qty, 2)
+
+    if action == "BUY":
+        cost = total + fee
+        trader["cash"] = round(trader["cash"] - cost, 2)
+
+        portfolio = trader.setdefault("portfolio", {})
+        if ticker in portfolio:
+            pos = portfolio[ticker]
+            old_qty = pos["qty"]
+            old_cost = pos["avg_cost"]
+            new_qty = old_qty + qty
+            pos["avg_cost"] = round((old_cost * old_qty + price * qty) / new_qty, 2)
+            pos["qty"] = new_qty
+        else:
+            portfolio[ticker] = {"qty": qty, "avg_cost": price}
+
+    elif action == "SELL":
+        revenue = total - fee
+        trader["cash"] = round(trader["cash"] + revenue, 2)
+
+        pos = trader["portfolio"][ticker]
+        pos["qty"] -= qty
+        if pos["qty"] <= 0:
+            del trader["portfolio"][ticker]
+
+    elif action == "SHORT":
+        margin_pct = config.get("short_margin_pct", 1.50)
+        margin = round(price * qty * margin_pct, 2)
+        trader["cash"] = round(trader["cash"] - margin, 2)
+
+        shorts = trader.setdefault("shorts", {})
+        if ticker in shorts:
+            s = shorts[ticker]
+            old_qty = s["qty"]
+            old_entry = s["entry_price"]
+            new_qty = old_qty + qty
+            s["entry_price"] = round((old_entry * old_qty + price * qty) / new_qty, 2)
+            s["qty"] = new_qty
+            s["margin"] = round(s.get("margin", 0) + margin, 2)
+        else:
+            shorts[ticker] = {
+                "qty": qty,
+                "entry_price": price,
+                "margin": margin,
+            }
+
+    elif action == "COVER":
+        short_pos = trader["shorts"][ticker]
+        entry = short_pos["entry_price"]
+        pnl = round((entry - price) * qty - fee, 2)
+
+        margin_return = round(short_pos["margin"] * (qty / short_pos["qty"]), 2)
+        trader["cash"] = round(trader["cash"] + margin_return + pnl, 2)
+
+        short_pos["qty"] -= qty
+        short_pos["margin"] = round(short_pos["margin"] - margin_return, 2)
+        if short_pos["qty"] <= 0:
+            del trader["shorts"][ticker]
+
+    # Update volume
+    stock["volume_24h"] = stock.get("volume_24h", 0) + qty
+
+    # Bump trade count
+    trader["trade_count"] = trader.get("trade_count", 0) + 1
+
+    # Recalc stats
+    update_trader_stats(trader, market)
+
+    issue_number = int(os.environ.get("ISSUE_NUMBER", 0))
+    return {
+        "id": f"t_{today_str().replace('-', '')}_{issue_number:04d}",
+        "timestamp": now_iso(),
+        "user": trader["username"],
+        "action": action,
+        "ticker": ticker,
+        "qty": qty,
+        "price": price,
+        "total": total,
+        "fee": fee,
+        "issue_number": issue_number,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Receipt
+# ---------------------------------------------------------------------------
+
+
+def format_receipt(trade: dict, trader: dict) -> str:
+    """Markdown receipt for the issue comment."""
+    action_emoji = {
+        "BUY": "📈", "SELL": "📉", "SHORT": "📉", "COVER": "📈"
+    }
+    emoji = action_emoji.get(trade["action"], "💹")
+
+    lines = [
+        f"## {emoji} Trade Executed",
+        "",
+        "| Field | Value |",
+        "|-------|-------|",
+        f"| **Action** | {trade['action']} |",
+        f"| **Stock** | {trade['ticker']} |",
+        f"| **Quantity** | {trade['qty']} |",
+        f"| **Price** | ${trade['price']:,.2f} |",
+        f"| **Total** | ${trade['total']:,.2f} |",
+        f"| **Fee** | ${trade['fee']:,.2f} |",
+        f"| **Cash Remaining** | ${trader['cash']:,.2f} |",
+        f"| **Portfolio Value** | ${trader['total_value']:,.2f} |",
+        "",
+        f"*Trade #{trader['trade_count']} by @{trader['username']}*",
+    ]
+    return "\n".join(lines)
+
+
+def format_rejection(reason: str) -> str:
+    """Markdown rejection comment."""
+    return f"## Trade Rejected\n\n{reason}\n\nPlease check your trade and try again."
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+
+def main():
+    start = _time.time()
+
+    title = os.environ.get("ISSUE_TITLE", "")
+    username = os.environ.get("ISSUE_USER", "")
+    issue_number = int(os.environ.get("ISSUE_NUMBER", 0))
+
+    if not title or not username:
+        print("Missing ISSUE_TITLE or ISSUE_USER environment variables.")
+        sys.exit(1)
+
+    # 0. Data integrity pre-check
+    errors = validate_state()
+    if errors:
+        print(f"WARNING: {len(errors)} data integrity issue(s):")
+        for e in errors[:5]:
+            print(f"  - {e}")
+
+    # 1. Parse
+    parsed = parse_trade(title)
+    if not parsed:
+        msg = format_rejection(
+            f"Could not parse trade: `{title}`\n\n"
+            "Expected format: `BUY <ticker> <quantity>`, "
+            "`SELL <ticker> <quantity>`, `SHORT <ticker> <quantity>`, "
+            "or `COVER <ticker> <quantity>`."
+        )
+        post_issue_comment(issue_number, msg)
+        close_issue(issue_number)
+        print(f"Rejected: invalid format '{title}'")
+        return
+
+    action, ticker, qty = parsed
+    print(f"Trade: {action} {ticker} x{qty} by @{username}")
+
+    # 2. Abuse checks
+    age_error = check_account_age(username)
+    if age_error:
+        post_issue_comment(issue_number, format_rejection(age_error))
+        close_issue(issue_number)
+        print(f"Rejected (account age): {age_error}")
+        log_engine_run("trade", _time.time() - start, {"result": "rejected_age", "user": username})
+        return
+
+    rate_error = check_rate_limit_user(username)
+    if rate_error:
+        post_issue_comment(issue_number, format_rejection(rate_error))
+        close_issue(issue_number)
+        print(f"Rejected (rate limit): {rate_error}")
+        log_engine_run("trade", _time.time() - start, {"result": "rejected_rate", "user": username})
+        return
+
+    dup_error = check_duplicate_trade(username, action, ticker)
+    if dup_error:
+        post_issue_comment(issue_number, format_rejection(dup_error))
+        close_issue(issue_number)
+        print(f"Rejected (duplicate): {dup_error}")
+        log_engine_run("trade", _time.time() - start, {"result": "rejected_dup", "user": username})
+        return
+
+    # 3. Load state
+    config = load_config()
+    market = load_market()
+    trader = load_trader(username)
+
+    # 4. Validate
+    error = validate_trade(action, ticker, qty, trader, market, config)
+    if error:
+        post_issue_comment(issue_number, format_rejection(error))
+        close_issue(issue_number)
+        print(f"Rejected: {error}")
+        log_engine_run("trade", _time.time() - start, {"result": "rejected_validation", "user": username})
+        return
+
+    # 5. Execute
+    trade = execute_trade(action, ticker, qty, trader, market, config)
+
+    # 6. Save state
+    save_trader(username, trader)
+    save_market(market)
+    append_trade_history(trade)
+
+    # 7. Post receipt + close issue
+    receipt = format_receipt(trade, trader)
+    post_issue_comment(issue_number, receipt)
+    close_issue(issue_number)
+
+    duration = _time.time() - start
+    log_engine_run("trade", duration, {
+        "result": "executed",
+        "user": username,
+        "action": action,
+        "ticker": ticker,
+        "qty": qty,
+        "price": trade["price"],
+    })
+
+    print(f"Executed: {action} {qty} {ticker} @ ${trade['price']:,.2f}")
+    print(f"  Cash: ${trader['cash']:,.2f} | Portfolio: ${trader['total_value']:,.2f}")
+
+
+if __name__ == "__main__":
+    main()

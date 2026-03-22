@@ -1,0 +1,17 @@
+name: Buy Stock
+description: Buy shares of a GitHub repo
+title: "BUY <ticker> <quantity>"
+labels: ["trade"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Buy Stock
+
+        Edit the **title** above:
+        - Replace `<ticker>` with the stock ticker (e.g. `react`, `vscode`, `deno`)
+        - Replace `<quantity>` with number of shares (1-100)
+
+        Example: `BUY react 10`
+
+        Then click **Submit new issue**. Your trade will execute automatically.

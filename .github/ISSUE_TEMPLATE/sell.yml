@@ -1,0 +1,17 @@
+name: Sell Stock
+description: Sell shares you own
+title: "SELL <ticker> <quantity>"
+labels: ["trade"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Sell Stock
+
+        Edit the **title** above:
+        - Replace `<ticker>` with the stock ticker (e.g. `react`, `vscode`, `deno`)
+        - Replace `<quantity>` with number of shares to sell
+
+        Example: `SELL react 5`
+
+        Then click **Submit new issue**. Your trade will execute automatically.
