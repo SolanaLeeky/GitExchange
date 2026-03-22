@@ -449,7 +449,7 @@
           <div class="stock-metrics">
             <div class="metric-item"><div class="metric-value">${(m.stars||0).toLocaleString()}</div><div class="metric-label">Stars</div></div>
             <div class="metric-item"><div class="metric-value">${(m.forks||0).toLocaleString()}</div><div class="metric-label">Forks</div></div>
-            <div class="metric-item"><div class="metric-value">${m.commits_week||0}</div><div class="metric-label">Commits/wk</div></div>
+            <div class="metric-item"><div class="metric-value">${(m.contributors||0).toLocaleString()}</div><div class="metric-label">Contributors</div></div>
           </div>
           <div class="stock-actions">
             <a class="btn btn-buy" href="https://github.com/${REPO}/issues/new?title=BUY+${ticker}+10&body=Adjust+quantity+then+submit">Buy</a>
@@ -468,7 +468,7 @@
       const ctx = document.getElementById('price-chart').getContext('2d');
       const colors = ['#58a6ff', '#3fb950', '#f85149', '#d2a8ff', '#f0883e', '#79c0ff', '#56d364', '#ffa657', '#ff7b72', '#d2a8ff'];
 
-      // Load last 7 days of price history
+      // Load last 7 days of price history — use ALL snapshots (not just 1 per day)
       const allPrices = {};
       const labels = [];
       const today = new Date();
@@ -476,18 +476,21 @@
         const d = new Date(today);
         d.setDate(d.getDate() - i);
         const dateStr = d.toISOString().slice(0, 10);
-        labels.push(dateStr.slice(5)); // MM-DD
         const data = await loadJSON(`data/history/prices/${dateStr}.json`);
         if (data && data.snapshots) {
-          const lastSnap = data.snapshots[data.snapshots.length - 1];
-          for (const [ticker, price] of Object.entries(lastSnap.prices || {})) {
-            if (!allPrices[ticker]) allPrices[ticker] = [];
-            allPrices[ticker].push(price);
-          }
-        } else {
-          // Fill nulls for missing days
-          for (const ticker in allPrices) {
-            allPrices[ticker].push(null);
+          for (const snap of data.snapshots) {
+            const timeLabel = dateStr.slice(5) + ' ' + (snap.time || '').slice(0, 5);
+            labels.push(timeLabel);
+            for (const [ticker, price] of Object.entries(snap.prices || {})) {
+              if (!allPrices[ticker]) allPrices[ticker] = new Array(labels.length - 1).fill(null);
+              allPrices[ticker].push(price);
+            }
+            // Fill null for tickers not in this snapshot
+            for (const ticker in allPrices) {
+              if (allPrices[ticker].length < labels.length) {
+                allPrices[ticker].push(null);
+              }
+            }
           }
         }
       }

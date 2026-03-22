@@ -225,7 +225,13 @@ def get_repo_metrics(repo_full_name: str) -> dict:
         stats = repo.get_stats_commit_activity()
         if stats:
             commits_week = stats[-1].total
-    except GithubException:
+        # Fallback: if stats API returns 0/None, count recent commits directly
+        if not commits_week:
+            from datetime import timedelta as _td
+            since = datetime.now(timezone.utc) - _td(days=7)
+            recent = repo.get_commits(since=since)
+            commits_week = min(recent.totalCount, 9999)
+    except (GithubException, Exception):
         pass
 
     issue_response_hrs = _avg_issue_response(repo)
