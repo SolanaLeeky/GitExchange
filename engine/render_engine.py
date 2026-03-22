@@ -54,13 +54,13 @@ def render_market_table(market: dict) -> str:
         cap = s.get("market_cap", 0)
         name = s.get("full_name", ticker)
 
-        # Format change with arrow
+        # Format change with arrow emoji
         if change > 0:
-            change_str = f"+{change:.2f}%"
+            change_str = f"🟢 +{change:.2f}%"
         elif change < 0:
-            change_str = f"{change:.2f}%"
+            change_str = f"🔴 {change:.2f}%"
         else:
-            change_str = "0.00%"
+            change_str = "⚪ 0.00%"
 
         # Format market cap
         if cap >= 1_000_000:
@@ -70,11 +70,12 @@ def render_market_table(market: dict) -> str:
         else:
             cap_str = f"${cap:.0f}"
 
-        # Issue links
+        # Issue links (Buy, Sell, Short)
         buy_url = f"https://github.com/{REPO_SLUG}/issues/new?title=BUY+{ticker}+10&body=Adjust+quantity+in+the+title+then+submit"
         sell_url = f"https://github.com/{REPO_SLUG}/issues/new?title=SELL+{ticker}+5&body=Adjust+quantity+in+the+title+then+submit"
+        short_url = f"https://github.com/{REPO_SLUG}/issues/new?title=SHORT+{ticker}+10&body=Adjust+quantity+in+the+title+then+submit"
 
-        trade_links = f"[Buy]({buy_url}) / [Sell]({sell_url})"
+        trade_links = f"[Buy]({buy_url}) [Sell]({sell_url}) [Short]({short_url})"
 
         lines.append(
             f"| **{ticker.upper()}** | {name} | ${price:,.2f} | {change_str} | {volume} | {cap_str} | {trade_links} |"
@@ -214,11 +215,14 @@ def render_market_status(market: dict) -> str:
 
     status_icon = "🟢" if status == "open" else "🔴"
 
+    stocks_label = "Stock" if stock_count == 1 else "Stocks"
+    traders_label = "Trader" if trader_count == 1 else "Traders"
+
     return (
         f"{status_icon} **Market {status.upper()}** | "
         f"Total Cap: {cap_str} | "
-        f"{stock_count} Stocks | "
-        f"{trader_count} Traders | "
+        f"{stock_count} {stocks_label} | "
+        f"{trader_count} {traders_label} | "
         f"Last Update: {updated[:16].replace('T', ' ')} UTC"
     )
 
@@ -407,7 +411,41 @@ def generate_all_charts(market: dict) -> None:
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-# 6. README ASSEMBLY
+# 6. DASHBOARD DATA (for GitHub Pages)
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def generate_dashboard_data(market: dict) -> None:
+    """Write docs/dashboard.json with trader count and leaderboard for Pages."""
+    from utils import save_json
+
+    traders = list_traders()
+    leaderboard = []
+    for username in traders:
+        t = load_trader(username)
+        update_trader_stats(t, market)
+        leaderboard.append({
+            "username": t["username"],
+            "total_value": t["total_value"],
+            "pnl": t["pnl"],
+            "pnl_pct": t["pnl_pct"],
+            "trade_count": t.get("trade_count", 0),
+            "achievements": t.get("achievements", []),
+        })
+
+    leaderboard.sort(key=lambda x: x["total_value"], reverse=True)
+
+    docs_dir = ROOT_DIR / "docs"
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    save_json(docs_dir / "dashboard.json", {
+        "trader_count": len(traders),
+        "leaderboard": leaderboard[:20],
+    })
+    print(f"  Dashboard data written ({len(traders)} traders)")
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# 7. README ASSEMBLY
 # ═══════════════════════════════════════════════════════════════════════════
 
 
@@ -459,11 +497,14 @@ def main():
     print("Render engine")
     print("=" * 40)
 
-    print("\n[1/2] Generating charts...")
+    print("\n[1/3] Generating charts...")
     generate_all_charts(market)
 
-    print("\n[2/2] Generating README...")
+    print("\n[2/3] Generating README...")
     render_readme(market)
+
+    print("\n[3/3] Generating dashboard data...")
+    generate_dashboard_data(market)
 
     print("\nDone.")
 

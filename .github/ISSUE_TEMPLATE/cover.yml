@@ -1,0 +1,17 @@
+name: Cover Short
+description: Close a short position (buy back shares you shorted)
+title: "COVER <ticker> <quantity>"
+labels: ["trade"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Cover Short Position
+
+        Edit the **title** above:
+        - Replace `<ticker>` with the stock ticker
+        - Replace `<quantity>` with number of shares to cover
+
+        Example: `COVER deno 20`
+
+        Your short position will be closed and P&L settled.

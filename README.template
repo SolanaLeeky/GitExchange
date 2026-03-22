@@ -6,6 +6,17 @@
 
 ---
 
+## Quick Start
+
+1. Click a **Buy** or **Sell** link in the Market Board below
+2. Adjust the quantity in the issue title, then submit
+3. Your trade executes automatically — you'll get a receipt comment
+4. Open an issue titled `PORTFOLIO` to see your holdings anytime
+
+> New accounts must be at least 7 days old. Max 5 trades per hour.
+
+---
+
 ## Market Board
 
 <!-- MARKET_TABLE -->
@@ -30,14 +41,15 @@
 
 ---
 
-## How to Trade
+## Trading Commands
 
-1. **Buy** — Click a Buy link above (or open an issue titled `BUY <ticker> <quantity>`)
-2. **Sell** — Click a Sell link (or `SELL <ticker> <quantity>`)
-3. **Short** — Open an issue titled `SHORT <ticker> <quantity>`
-4. **Cover** — Close a short with `COVER <ticker> <quantity>`
-
-Your trade executes automatically. You'll get a receipt comment on the issue.
+| Command | Example | Description |
+|---------|---------|-------------|
+| `BUY <ticker> <qty>` | `BUY react 10` | Buy shares |
+| `SELL <ticker> <qty>` | `SELL vscode 5` | Sell shares you own |
+| `SHORT <ticker> <qty>` | `SHORT deno 20` | Bet on price decrease (150% margin required) |
+| `COVER <ticker> <qty>` | `COVER deno 20` | Close a short position |
+| `PORTFOLIO` | `PORTFOLIO` | View your holdings, P&L, and achievements |
 
 ## Rules
 
@@ -50,6 +62,21 @@ Your trade executes automatically. You'll get a receipt comment on the issue.
 | Trade size | 1–100 shares per trade |
 | Price updates | Every 6 hours (GitHub API metrics) |
 | Dividends | Daily — 0.5% of price to holders of repos with 50+ commits/week |
+
+## Achievements
+
+| Badge | Name | How to Earn |
+|-------|------|-------------|
+| 🎯 | First Trade | Complete your first trade |
+| 💯 | Century Trader | Make 100 trades |
+| 🚀 | 10x Return | Portfolio value reaches 10x starting cash |
+| 💎 | Diamond Hands | Hold a stock for 30+ days |
+| 📄 | Paper Hands | Sell within 1 hour of buying |
+| 👑 | Short King | Profit $5,000+ from short positions |
+| 🌐 | Diversified | Hold 10+ different stocks |
+| 🐋 | Whale | Single trade worth $5,000+ |
+| 🛡️ | Survivor | Hold a stock through a crash event |
+| 🔔 | IPO Hunter | Buy a stock on its IPO day |
 
 ## How Prices Work
 

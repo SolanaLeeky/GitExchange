@@ -1,0 +1,17 @@
+name: View Portfolio
+description: See your holdings, P&L, and achievements
+title: "PORTFOLIO"
+labels: ["portfolio"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## View Your Portfolio
+
+        Just click **Submit new issue** — no edits needed.
+
+        You'll get a comment showing your:
+        - Cash balance and portfolio value
+        - All stock holdings with per-stock P&L
+        - Short positions
+        - Achievements earned

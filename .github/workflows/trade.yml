@@ -14,7 +14,8 @@ jobs:
       startsWith(github.event.issue.title, 'BUY') ||
       startsWith(github.event.issue.title, 'SELL') ||
       startsWith(github.event.issue.title, 'SHORT') ||
-      startsWith(github.event.issue.title, 'COVER')
+      startsWith(github.event.issue.title, 'COVER') ||
+      startsWith(github.event.issue.title, 'PORTFOLIO')
     runs-on: ubuntu-latest
     permissions:
       issues: write

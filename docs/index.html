@@ -4,6 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GitExchange — The GitHub Stock Market</title>
+  <meta property="og:title" content="GitExchange — The GitHub Stock Market">
+  <meta property="og:description" content="Trade open-source repos like stocks. Prices driven by real GitHub activity. Built entirely on GitHub Actions.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://solanaleaky.github.io/GitExchange/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GitExchange — The GitHub Stock Market">
+  <meta name="twitter:description" content="Trade open-source repos like stocks. Prices driven by real GitHub activity.">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
   <style>
     :root {
@@ -242,7 +249,12 @@
 
     <h2>Price History</h2>
     <div class="chart-container">
-      <canvas id="price-chart" height="300"></canvas>
+      <canvas id="price-chart" height="400"></canvas>
+    </div>
+
+    <h2>Leaderboard</h2>
+    <div id="leaderboard-table">
+      <div class="loading">Loading leaderboard...</div>
     </div>
 
     <h2>Recent Trades</h2>
@@ -257,6 +269,7 @@
       <tr><td>Sell</td><td><code>SELL &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>SELL vscode 5</code></td></tr>
       <tr><td>Short</td><td><code>SHORT &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>SHORT deno 20</code></td></tr>
       <tr><td>Cover</td><td><code>COVER &lt;ticker&gt; &lt;quantity&gt;</code></td><td><code>COVER deno 20</code></td></tr>
+      <tr><td>Portfolio</td><td><code>PORTFOLIO</code></td><td><code>PORTFOLIO</code></td></tr>
     </table>
   </div>
 
@@ -333,27 +346,54 @@
         grid.appendChild(card);
       }
 
-      // Price chart
+      // Price chart — load real history
       renderPriceChart(sorted);
     }
 
-    function renderPriceChart(stocks) {
+    async function renderPriceChart(stocks) {
       const ctx = document.getElementById('price-chart').getContext('2d');
-      const colors = ['#58a6ff', '#3fb950', '#f85149', '#d2a8ff', '#f0883e'];
+      const colors = ['#58a6ff', '#3fb950', '#f85149', '#d2a8ff', '#f0883e', '#79c0ff', '#56d364', '#ffa657', '#ff7b72', '#d2a8ff'];
 
-      const datasets = stocks.map(([ticker, s], i) => ({
+      // Load last 7 days of price history
+      const allPrices = {};
+      const labels = [];
+      const today = new Date();
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date(today);
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().slice(0, 10);
+        labels.push(dateStr.slice(5)); // MM-DD
+        const data = await loadJSON(`data/history/prices/${dateStr}.json`);
+        if (data && data.snapshots) {
+          const lastSnap = data.snapshots[data.snapshots.length - 1];
+          for (const [ticker, price] of Object.entries(lastSnap.prices || {})) {
+            if (!allPrices[ticker]) allPrices[ticker] = [];
+            allPrices[ticker].push(price);
+          }
+        } else {
+          // Fill nulls for missing days
+          for (const ticker in allPrices) {
+            allPrices[ticker].push(null);
+          }
+        }
+      }
+
+      // Build datasets — show top 5 stocks by market cap
+      const top5 = stocks.slice(0, 5);
+      const datasets = top5.map(([ticker], i) => ({
         label: ticker.toUpperCase(),
-        data: [s.prev_price || s.price, s.price],
+        data: allPrices[ticker] || [],
         borderColor: colors[i % colors.length],
         backgroundColor: 'transparent',
         tension: 0.3,
         borderWidth: 2,
         pointRadius: 3,
+        spanGaps: true,
       }));
 
       new Chart(ctx, {
         type: 'line',
-        data: { labels: ['Previous', 'Current'], datasets },
+        data: { labels, datasets },
         options: {
           responsive: true,
           plugins: {
@@ -367,20 +407,68 @@
       });
     }
 
-    async function renderTrades() {
-      const today = new Date().toISOString().slice(0, 10);
-      const data = await loadJSON(`data/history/trades/${today}.json`);
-      const container = document.getElementById('trades-table');
+    async function renderLeaderboard() {
+      const data = await loadJSON('docs/dashboard.json');
+      const container = document.getElementById('leaderboard-table');
 
-      if (!data || !data.trades || data.trades.length === 0) {
-        container.innerHTML = '<p style="color:var(--fg-muted)">No trades today.</p>';
+      if (!data || !data.leaderboard || data.leaderboard.length === 0) {
+        container.innerHTML = '<p style="color:var(--fg-muted)">No traders yet. Be the first!</p>';
         return;
       }
 
-      const trades = data.trades.slice(-20).reverse();
+      // Set trader count in stats bar
+      document.getElementById('trader-count').textContent = data.trader_count || 0;
+
+      const badges = {
+        'first-trade': '🎯', '100-trades': '💯', '10x-return': '🚀',
+        'diamond-hands': '💎', 'paper-hands': '📄', 'short-king': '👑',
+        'diversified': '🌐', 'whale': '🐋', 'survivor': '🛡️', 'ipo-hunter': '🔔'
+      };
+      const medals = ['🥇', '🥈', '🥉'];
+
+      let html = '<table><tr><th>Rank</th><th>Trader</th><th>Value</th><th>P&L</th><th>Trades</th><th>Badges</th></tr>';
+      data.leaderboard.forEach((t, i) => {
+        const medal = i < 3 ? medals[i] : (i + 1);
+        const pnlClass = t.pnl >= 0 ? 'positive' : 'negative';
+        const pnlStr = t.pnl >= 0 ? `+$${t.pnl.toLocaleString(undefined,{minimumFractionDigits:2})}` : `-$${Math.abs(t.pnl).toLocaleString(undefined,{minimumFractionDigits:2})}`;
+        const badgeStr = (t.achievements || []).map(a => badges[a] || '').join(' ');
+        html += `<tr>
+          <td>${medal}</td>
+          <td>@${t.username}</td>
+          <td>$${t.total_value.toLocaleString(undefined,{minimumFractionDigits:2})}</td>
+          <td class="${pnlClass}">${pnlStr} (${t.pnl_pct >= 0 ? '+' : ''}${t.pnl_pct.toFixed(1)}%)</td>
+          <td>${t.trade_count}</td>
+          <td>${badgeStr}</td>
+        </tr>`;
+      });
+      html += '</table>';
+      container.innerHTML = html;
+    }
+
+    async function renderTrades() {
+      // Try last 3 days to find trades
+      const container = document.getElementById('trades-table');
+      let allTrades = [];
+      const today = new Date();
+      for (let i = 0; i < 3; i++) {
+        const d = new Date(today);
+        d.setDate(d.getDate() - i);
+        const dateStr = d.toISOString().slice(0, 10);
+        const data = await loadJSON(`data/history/trades/${dateStr}.json`);
+        if (data && data.trades) allTrades = allTrades.concat(data.trades);
+      }
+
+      if (allTrades.length === 0) {
+        container.innerHTML = '<p style="color:var(--fg-muted)">No recent trades.</p>';
+        return;
+      }
+
+      allTrades.sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+      const trades = allTrades.slice(0, 20);
+
       let html = '<table><tr><th>Time</th><th>Trader</th><th>Action</th><th>Stock</th><th>Qty</th><th>Price</th><th>Total</th></tr>';
       for (const t of trades) {
-        const time = (t.timestamp || '').slice(11, 16);
+        const time = (t.timestamp || '').slice(0, 16).replace('T', ' ');
         const actionClass = (t.action === 'BUY' || t.action === 'COVER') ? 'positive' : 'negative';
         html += `<tr>
           <td>${time}</td>
@@ -396,9 +484,8 @@
       container.innerHTML = html;
     }
 
-    // Trader count (count files in traders dir — not possible via static site,
-    // so just show '--' unless we embed it during render)
     renderStocks();
+    renderLeaderboard();
     renderTrades();
   </script>
 </body>

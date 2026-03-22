@@ -34,6 +34,7 @@ from utils import (
 # ---------------------------------------------------------------------------
 
 TRADE_REGEX = re.compile(r"^(BUY|SELL|SHORT|COVER)\s+(\w+)\s+(\d+)$", re.IGNORECASE)
+PORTFOLIO_REGEX = re.compile(r"^PORTFOLIO$", re.IGNORECASE)
 
 
 def parse_trade(title: str) -> tuple[str, str, int] | None:
@@ -45,6 +46,10 @@ def parse_trade(title: str) -> tuple[str, str, int] | None:
     ticker = m.group(2).lower()
     qty = int(m.group(3))
     return action, ticker, qty
+
+
+def is_portfolio_request(title: str) -> bool:
+    return bool(PORTFOLIO_REGEX.match(title.strip()))
 
 
 # ---------------------------------------------------------------------------
@@ -307,8 +312,8 @@ def execute_trade(
 # ---------------------------------------------------------------------------
 
 
-def format_receipt(trade: dict, trader: dict) -> str:
-    """Markdown receipt for the issue comment."""
+def format_receipt(trade: dict, trader: dict, market: dict) -> str:
+    """Markdown receipt for the issue comment, including per-trade P&L."""
     action_emoji = {
         "BUY": "📈", "SELL": "📉", "SHORT": "📉", "COVER": "📈"
     }
@@ -325,11 +330,101 @@ def format_receipt(trade: dict, trader: dict) -> str:
         f"| **Price** | ${trade['price']:,.2f} |",
         f"| **Total** | ${trade['total']:,.2f} |",
         f"| **Fee** | ${trade['fee']:,.2f} |",
+    ]
+
+    # Per-trade P&L for SELL/COVER
+    if trade["action"] == "SELL":
+        avg_cost = trader.get("portfolio", {}).get(trade["ticker"], {}).get("avg_cost", trade["price"])
+        pnl = round((trade["price"] - avg_cost) * trade["qty"] - trade["fee"], 2)
+        pnl_str = f"+${pnl:,.2f}" if pnl >= 0 else f"-${abs(pnl):,.2f}"
+        lines.append(f"| **Trade P&L** | {pnl_str} |")
+    elif trade["action"] == "COVER":
+        # For cover, profit = (entry - current) * qty - fee (already closed, use trade data)
+        lines.append(f"| **Trade P&L** | *see portfolio* |")
+
+    lines.extend([
         f"| **Cash Remaining** | ${trader['cash']:,.2f} |",
         f"| **Portfolio Value** | ${trader['total_value']:,.2f} |",
+        f"| **Overall P&L** | {'+' if trader['pnl'] >= 0 else ''}{trader['pnl_pct']:.1f}% (${trader['pnl']:+,.2f}) |",
         "",
         f"*Trade #{trader['trade_count']} by @{trader['username']}*",
+    ])
+    return "\n".join(lines)
+
+
+def format_portfolio(trader: dict, market: dict) -> str:
+    """Markdown portfolio view for PORTFOLIO command."""
+    stocks = market.get("stocks", {})
+
+    lines = [
+        f"## 💼 Portfolio — @{trader['username']}",
+        "",
+        f"**Cash**: ${trader['cash']:,.2f}",
+        f"**Portfolio Value**: ${trader['total_value']:,.2f}",
+        f"**P&L**: {'+' if trader['pnl'] >= 0 else ''}{trader['pnl_pct']:.1f}% (${trader['pnl']:+,.2f})",
+        f"**Trades**: {trader['trade_count']}",
+        "",
     ]
+
+    # Holdings
+    portfolio = trader.get("portfolio", {})
+    if portfolio:
+        lines.extend([
+            "### Holdings",
+            "",
+            "| Stock | Qty | Avg Cost | Current | Value | P&L |",
+            "|-------|-----|----------|---------|-------|-----|",
+        ])
+        for ticker, pos in sorted(portfolio.items()):
+            qty = pos["qty"]
+            avg = pos["avg_cost"]
+            current = stocks.get(ticker, {}).get("price", 0)
+            value = round(current * qty, 2)
+            pnl = round((current - avg) * qty, 2)
+            pnl_pct = round(((current - avg) / avg) * 100, 1) if avg > 0 else 0
+            pnl_str = f"+${pnl:,.2f} (+{pnl_pct:.1f}%)" if pnl >= 0 else f"-${abs(pnl):,.2f} ({pnl_pct:.1f}%)"
+            lines.append(f"| **{ticker.upper()}** | {qty} | ${avg:,.2f} | ${current:,.2f} | ${value:,.2f} | {pnl_str} |")
+        lines.append("")
+    else:
+        lines.extend(["### Holdings", "", "*No stocks held.*", ""])
+
+    # Shorts
+    shorts = trader.get("shorts", {})
+    if shorts:
+        lines.extend([
+            "### Short Positions",
+            "",
+            "| Stock | Qty | Entry | Current | Margin | P&L |",
+            "|-------|-----|-------|---------|--------|-----|",
+        ])
+        for ticker, pos in sorted(shorts.items()):
+            qty = pos["qty"]
+            entry = pos["entry_price"]
+            margin = pos.get("margin", 0)
+            current = stocks.get(ticker, {}).get("price", 0)
+            pnl = round((entry - current) * qty, 2)
+            pnl_str = f"+${pnl:,.2f}" if pnl >= 0 else f"-${abs(pnl):,.2f}"
+            lines.append(f"| **{ticker.upper()}** | {qty} | ${entry:,.2f} | ${current:,.2f} | ${margin:,.2f} | {pnl_str} |")
+        lines.append("")
+
+    # Achievements
+    achievements = trader.get("achievements", [])
+    if achievements:
+        badge_map = {
+            "first-trade": "🎯 First Trade",
+            "100-trades": "💯 Century Trader",
+            "10x-return": "🚀 10x Return",
+            "diamond-hands": "💎 Diamond Hands",
+            "paper-hands": "📄 Paper Hands",
+            "short-king": "👑 Short King",
+            "diversified": "🌐 Diversified",
+            "whale": "🐋 Whale",
+            "survivor": "🛡️ Survivor",
+            "ipo-hunter": "🔔 IPO Hunter",
+        }
+        badge_list = ", ".join(badge_map.get(a, a) for a in achievements)
+        lines.extend(["### Achievements", "", badge_list, ""])
+
     return "\n".join(lines)
 
 
@@ -361,6 +456,18 @@ def main():
         for e in errors[:5]:
             print(f"  - {e}")
 
+    # 0.5. PORTFOLIO command
+    if is_portfolio_request(title):
+        market = load_market()
+        trader = load_trader(username)
+        update_trader_stats(trader, market)
+        portfolio_msg = format_portfolio(trader, market)
+        post_issue_comment(issue_number, portfolio_msg)
+        close_issue(issue_number)
+        print(f"Portfolio view for @{username}")
+        log_engine_run("trade", _time.time() - start, {"result": "portfolio_view", "user": username})
+        return
+
     # 1. Parse
     parsed = parse_trade(title)
     if not parsed:
@@ -368,7 +475,7 @@ def main():
             f"Could not parse trade: `{title}`\n\n"
             "Expected format: `BUY <ticker> <quantity>`, "
             "`SELL <ticker> <quantity>`, `SHORT <ticker> <quantity>`, "
-            "or `COVER <ticker> <quantity>`."
+            "`COVER <ticker> <quantity>`, or `PORTFOLIO`."
         )
         post_issue_comment(issue_number, msg)
         close_issue(issue_number)
@@ -426,7 +533,7 @@ def main():
     append_trade_history(trade)
 
     # 7. Post receipt + close issue
-    receipt = format_receipt(trade, trader)
+    receipt = format_receipt(trade, trader, market)
     post_issue_comment(issue_number, receipt)
     close_issue(issue_number)
 
