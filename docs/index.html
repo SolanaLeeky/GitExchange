@@ -357,8 +357,8 @@
     </div>
 
     <h2>Price History</h2>
-    <div class="chart-container">
-      <canvas id="price-chart" height="400"></canvas>
+    <div class="chart-container" style="position:relative;height:320px;">
+      <canvas id="price-chart"></canvas>
     </div>
 
     <h2>Leaderboard</h2>
@@ -521,11 +521,12 @@
         data: { labels, datasets },
         options: {
           responsive: true,
+          maintainAspectRatio: false,
           plugins: {
             legend: { labels: { color: '#c9d1d9' } },
           },
           scales: {
-            x: { ticks: { color: '#8b949e' }, grid: { color: '#21262d' } },
+            x: { ticks: { color: '#8b949e', maxTicksLimit: 8 }, grid: { color: '#21262d' } },
             y: { ticks: { color: '#8b949e', callback: v => '$' + v }, grid: { color: '#21262d' } },
           },
         },
