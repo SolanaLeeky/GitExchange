@@ -1,7 +1,7 @@
 {
   "last_updated": "2026-03-22T03:53:39Z",
   "market_status": "open",
-  "total_market_cap": 1975735.0,
+  "total_market_cap": 1954615.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -175,41 +175,23 @@
     },
     "clianything": {
       "full_name": "HKUDS/CLI-Anything",
-      "price": 42.24,
-      "prev_price": 42.24,
-      "change_pct": 0.0,
-      "volume_24h": 0,
-      "market_cap": 21120.0,
-      "shares_outstanding": 500,
-      "ipo_date": "2026-03-22",
-      "metrics": {
-        "stars": 20624,
-        "forks": 1810,
-        "commits_week": 2,
-        "issue_response_hrs": 74.9,
-        "contributors": 24
-      },
-      "tags": [
-        "ipo-new"
-      ]
-    },
-    "cli-anything": {
-      "full_name": "HKUDS/CLI-Anything",
-      "shares_outstanding": 500,
-      "ipo_date": "2026-03-22",
-      "volume_24h": 0,
-      "tags": [],
-      "prev_price": 0,
       "price": 447.56,
+      "prev_price": 0,
       "change_pct": 0.0,
+      "volume_24h": 0,
       "market_cap": 223780.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-03-22",
       "metrics": {
         "stars": 20627,
         "forks": 1811,
         "commits_week": 2,
         "issue_response_hrs": 1.1,
         "contributors": 24
-      }
+      },
+      "tags": [
+        "ipo-new"
+      ]
     }
   }
 }

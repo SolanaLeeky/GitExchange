@@ -24,6 +24,7 @@ from utils import (
     check_margin_calls,
     rotate_history,
     log_engine_run,
+    ticker_from_repo,
     now_iso,
     today_str,
     save_json,
@@ -111,7 +112,7 @@ def process_ipos(market: dict, config: dict) -> list[dict]:
             if repo.full_name in listed:
                 continue
 
-            ticker = repo.name.lower().replace(".", "").replace("-", "")
+            ticker = ticker_from_repo(repo.full_name)
 
             # Skip if ticker already exists (name collision)
             if ticker in stocks:
@@ -123,10 +124,32 @@ def process_ipos(market: dict, config: dict) -> list[dict]:
             except Exception:
                 continue
 
-            # Simple initial price from stars (normalized loosely)
-            max_stars = max((s.get("metrics", {}).get("stars", 1) for s in stocks.values()), default=1)
-            price = round((metrics["stars"] / max(max_stars, 1)) * 500, 2)
-            price = max(price, 10.0)  # floor at $10
+            # Calculate initial price using weighted metrics (same formula as price engine)
+            # Normalize against existing stocks to get a fair starting price
+            all_values = {"stars": [], "forks": [], "commits_week": [], "issue_response_hrs": [], "contributors": []}
+            for s in stocks.values():
+                for k in all_values:
+                    all_values[k].append(s.get("metrics", {}).get(k, 0))
+            for k in all_values:
+                all_values[k].append(metrics.get(k, 0))
+
+            weights = config.get("price_weights", {})
+            key_map = {"stars": "stars", "commits_week": "commits_week", "forks": "forks",
+                        "issue_response": "issue_response_hrs", "contributors": "contributors"}
+
+            score = 0.0
+            for cfg_key, weight in weights.items():
+                mk = key_map.get(cfg_key, cfg_key)
+                vals = all_values.get(mk, [0])
+                max_val = max(max(vals), 1)
+                raw = metrics.get(mk, 0)
+                if mk == "issue_response_hrs":
+                    norm = (1 - raw / max_val) * 1000
+                else:
+                    norm = (raw / max_val) * 1000
+                score += norm * weight
+
+            price = round(max(score, 10.0), 2)
 
             stocks[ticker] = {
                 "full_name": repo.full_name,

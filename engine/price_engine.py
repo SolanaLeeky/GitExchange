@@ -18,6 +18,7 @@ from utils import (
     update_trader_stats,
     validate_state,
     log_engine_run,
+    ticker_from_repo,
     now_iso,
 )
 
@@ -114,7 +115,7 @@ def main():
     ticker_map: dict[str, str] = {}  # repo_name -> ticker
 
     for repo_name in repos:
-        ticker = repo_name.split("/")[-1].lower().replace(".", "")
+        ticker = ticker_from_repo(repo_name)
         ticker_map[repo_name] = ticker
 
         print(f"  {ticker}: fetching...", end=" ")

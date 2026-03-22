@@ -1,5 +1,40 @@
 # Changelog
 
+## v1.2.0 — Data Integrity Fix (2026-03-22)
+
+### Bug 5: Duplicate tickers from inconsistent ticker derivation (CRITICAL)
+
+**Symptom**: `CLI-Anything` repo appears twice in market.json — as `clianything` ($42.24) AND `cli-anything` ($447.56). The ghost `cli-anything` entry has `prev_price: $0` causing a phantom +0% change display.
+
+**Root cause**: Three different ticker derivation functions across engines:
+- `event_engine.py` (IPO): `repo.name.lower().replace(".", "").replace("-", "")` → strips hyphens → `clianything`
+- `price_engine.py`: `repo_name.split("/")[-1].lower().replace(".", "")` → keeps hyphens → `cli-anything`
+- `bootstrap.py`: same as price engine → keeps hyphens
+
+When the price engine processed the IPO'd repo, it derived a different ticker and created a duplicate entry.
+
+**Fix**: Created a single `ticker_from_repo()` function in `utils.py` (strips both dots and hyphens). All three engines now import and use this shared function. Cleaned corrupted market data to remove the ghost entry.
+
+### Bug 6: IPO stocks inflate 140-348% on first price update
+
+**Symptom**: IPO'd stocks show extreme price jumps on the next price update:
+- autoresearch: $99 → $239 (+141%)
+- gstack: $73 → $216 (+197%)
+- paperclip: $64 → $216 (+239%)
+- cli: $45 → $201 (+348%)
+
+**Root cause**: The IPO scanner used a rough formula `(stars / max_stars) * 500` to set initial prices. The price engine uses full 5-metric weighted normalization which produces very different values. The momentum cap (±8%) does not help because the final price is `base_score * modifiers`, not `prev_price * modifiers` — the base score itself is the dominant factor.
+
+**Fix**: Replaced the IPO scanner's rough formula with the same weighted normalization used by the price engine — normalizes all 5 metrics (stars, forks, commits, issue response, contributors) against existing stocks. IPO prices now start close to where the price engine will value them, preventing first-update spikes.
+
+### Data cleanup
+
+- Removed duplicate `cli-anything` ghost entry from market.json
+- Removed orphaned `charts/ticker_cli-anything.svg`
+- Deduplicated config.json listed_repos
+
+---
+
 ## v1.1.0 — Bugfix Release (2026-03-22)
 
 ### Bug 1: Trade workflow crashes — missing matplotlib (CRITICAL)

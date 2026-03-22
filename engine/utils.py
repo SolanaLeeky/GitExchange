@@ -54,6 +54,16 @@ def load_config() -> dict:
 
 
 # ---------------------------------------------------------------------------
+# Ticker derivation (SINGLE SOURCE OF TRUTH)
+# ---------------------------------------------------------------------------
+
+
+def ticker_from_repo(repo_full_name: str) -> str:
+    """Derive a ticker from 'owner/repo-name'. Strips dots and hyphens."""
+    return repo_full_name.split("/")[-1].lower().replace(".", "").replace("-", "")
+
+
+# ---------------------------------------------------------------------------
 # Market
 # ---------------------------------------------------------------------------
 

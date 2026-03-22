@@ -10,15 +10,11 @@ from utils import (
     save_market,
     append_price_snapshot,
     get_repo_metrics,
+    ticker_from_repo,
     now_iso,
     today_str,
     DATA_DIR,
 )
-
-
-def ticker_from_repo(repo_full_name: str) -> str:
-    """Derive a short ticker from a repo name. e.g. 'facebook/react' -> 'react'."""
-    return repo_full_name.split("/")[-1].lower().replace(".", "")
 
 
 def normalize_metrics(all_metrics: dict[str, dict]) -> dict[str, dict]:
