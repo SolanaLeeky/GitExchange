@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $1.85M | 10 Stocks | 1 Trader | Last Update: 2026-03-22 06:43 UTC
+🟢 **Market OPEN** | Total Cap: $1.85M | 10 Stocks | 1 Trader | Last Update: 2026-03-22 06:45 UTC
 
 📈 **Top Gainer**: PAPERCLIP +123.22% ($483.11) | 📉 **Top Loser**: CLIANYTHING -59.32% ($182.07)
 
@@ -73,7 +73,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $11,196.98 | +$1,196.98 (+12.0%) | 7 | 🔔 🎯 |
+| 🥇 | @SolanaLeeky | $11,196.98 | +$1,196.98 (+12.0%) | 7 | 🎯 🐦 🦊 🔔 📄 |
 
 ---
 
