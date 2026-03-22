@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-03-22T02:38:35Z",
+  "last_updated": "2026-03-22T03:48:53Z",
   "market_status": "open",
-  "total_market_cap": 1395905.0,
+  "total_market_cap": 1557415.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -92,6 +92,106 @@
         "contributors": 411
       },
       "tags": []
+    },
+    "autoresearch": {
+      "full_name": "karpathy/autoresearch",
+      "price": 99.22,
+      "prev_price": 99.22,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 49610.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-03-22",
+      "metrics": {
+        "stars": 48442,
+        "forks": 6733,
+        "commits_week": 2,
+        "issue_response_hrs": 21.2,
+        "contributors": 7
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "gstack": {
+      "full_name": "garrytan/gstack",
+      "price": 72.7,
+      "prev_price": 72.7,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 36350.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-03-22",
+      "metrics": {
+        "stars": 35497,
+        "forks": 4349,
+        "commits_week": 0,
+        "issue_response_hrs": 68.2,
+        "contributors": 4
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "paperclip": {
+      "full_name": "paperclipai/paperclip",
+      "price": 63.92,
+      "prev_price": 63.92,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 31960.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-03-22",
+      "metrics": {
+        "stars": 31207,
+        "forks": 4305,
+        "commits_week": 0,
+        "issue_response_hrs": 95.4,
+        "contributors": 41
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "cli": {
+      "full_name": "googleworkspace/cli",
+      "price": 44.94,
+      "prev_price": 44.94,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 22470.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-03-22",
+      "metrics": {
+        "stars": 21942,
+        "forks": 1036,
+        "commits_week": 0,
+        "issue_response_hrs": 82.5,
+        "contributors": 38
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "clianything": {
+      "full_name": "HKUDS/CLI-Anything",
+      "price": 42.24,
+      "prev_price": 42.24,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 21120.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-03-22",
+      "metrics": {
+        "stars": 20624,
+        "forks": 1810,
+        "commits_week": 2,
+        "issue_response_hrs": 74.9,
+        "contributors": 24
+      },
+      "tags": [
+        "ipo-new"
+      ]
     }
   }
 }

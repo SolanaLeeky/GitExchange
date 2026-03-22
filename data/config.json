@@ -1,12 +1,12 @@
 {
   "starting_cash": 10000,
-  "max_position_pct": 0.40,
-  "short_margin_pct": 1.50,
+  "max_position_pct": 0.4,
+  "short_margin_pct": 1.5,
   "min_trade_qty": 1,
   "max_trade_qty": 100,
   "trading_fee_pct": 0.001,
   "price_weights": {
-    "stars": 0.30,
+    "stars": 0.3,
     "commits_week": 0.25,
     "forks": 0.15,
     "issue_response": 0.15,
@@ -21,6 +21,11 @@
     "microsoft/vscode",
     "denoland/deno",
     "vercel/next.js",
-    "sveltejs/svelte"
+    "sveltejs/svelte",
+    "karpathy/autoresearch",
+    "garrytan/gstack",
+    "paperclipai/paperclip",
+    "googleworkspace/cli",
+    "HKUDS/CLI-Anything"
   ]
 }
