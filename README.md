@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $1.92M | 10 Stocks | 1 Trader | Last Update: 2026-03-23 01:51 UTC
+🟢 **Market OPEN** | Total Cap: $1.92M | 10 Stocks | 2 Traders | Last Update: 2026-03-23 01:51 UTC
 
 📈 **Top Gainer**: REACT +29.51% ($753.25) | 📉 **Top Loser**: DENO -16.00% ($287.59)
 
@@ -56,7 +56,7 @@ Pick a stock and open a trade in one click:
 
 | Ticker | Name | Price | 24h Change | Volume | Market Cap | Trade |
 |--------|------|-------|------------|--------|------------|-------|
-| **REACT** | facebook/react | $753.25 | 🟢 +29.51% | 12 | $376.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+react+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **REACT** | facebook/react | $753.25 | 🟢 +29.51% | 17 | $376.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+react+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **VSCODE** | microsoft/vscode | $638.63 | 🟢 +5.61% | 3 | $319.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+vscode+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+vscode+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+vscode+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **NEXTJS** | vercel/next.js | $541.40 | 🔴 -11.63% | 5 | $270.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $471.98 | 🟢 +0.46% | 0 | $236.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -74,6 +74,7 @@ Pick a stock and open a trade in one click:
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
 | 🥇 | @SolanaLeeky | $12,415.02 | +$2,415.02 (+24.2%) | 10 | 🎯 🐦 🦊 🔔 📄 |
+| 🥈 | @neurobytex | $9,996.23 | -$3.77 (-0.0%) | 1 |  |
 
 ---
 
@@ -87,6 +88,7 @@ Pick a stock and open a trade in one click:
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-23 07:00 | @neurobytex | 📈 BUY | REACT | 5 | $753.25 | $3,766.25 |
 | 2026-03-22 11:21 | @SolanaLeeky | 📈 BUY | REACT | 5 | $562.76 | $2,813.80 |
 | 2026-03-22 08:13 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $574.80 | $574.80 |
 | 2026-03-22 07:11 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $574.80 | $574.80 |
@@ -96,7 +98,6 @@ Pick a stock and open a trade in one click:
 | 2026-03-22 05:29 | @SolanaLeeky | 📉 SELL | GSTACK | 10 | $216.10 | $2,161.00 |
 | 2026-03-22 05:23 | @SolanaLeeky | 📈 BUY | SVELTE | 3 | $401.61 | $1,204.83 |
 | 2026-03-22 03:50 | @SolanaLeeky | 📈 BUY | GSTACK | 10 | $72.70 | $727.00 |
-| 2026-03-22 03:42 | @SolanaLeeky | 📈 BUY | NEXTJS | 5 | $553.43 | $2,767.15 |
 
 ---
 
