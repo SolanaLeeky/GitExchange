@@ -326,6 +326,19 @@
         "traders_recalculated": 1,
         "api_failures": 10
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-23T07:00:09Z",
+      "duration_s": 3.15,
+      "details": {
+        "result": "executed",
+        "user": "neurobytex",
+        "action": "BUY",
+        "ticker": "react",
+        "qty": 5,
+        "price": 753.25
+      }
     }
   ]
 }
