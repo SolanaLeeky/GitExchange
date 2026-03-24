@@ -62,7 +62,7 @@ Pick a stock and open a trade in one click:
 | **SVELTE** | sveltejs/svelte | $414.25 | 🟢 +17.36% | 6 | $207.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+svelte+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+svelte+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+svelte+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $382.44 | 🟢 +38.27% | 0 | $191.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **DENO** | denoland/deno | $365.28 | 🔴 -5.42% | 2 | $182.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+deno+10&body=Adjust+quantity+in+the+title+then+submit) |
-| **CLIANYTHING** | HKUDS/CLI-Anything | $274.16 | 🔴 -17.84% | 0 | $137.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clianything+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clianything+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+clianything+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **CLIANYTHING** | HKUDS/CLI-Anything | $274.16 | 🔴 -17.84% | 5 | $137.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clianything+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clianything+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+clianything+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **GSTACK** | garrytan/gstack | $258.25 | 🔴 -6.69% | 20 | $129.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+gstack+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $240.50 | 🟢 +4.21% | 0 | $120.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLI** | googleworkspace/cli | $224.56 | 🟢 +12.73% | 0 | $112.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+cli+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+cli+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+cli+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -73,7 +73,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,094.41 | +$3,094.41 (+30.9%) | 11 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $13,093.04 | +$3,093.04 (+30.9%) | 12 | 🎯 🐦 🦊 🔔 📄 |
 | 🥈 | @neurobytex | $9,887.68 | -$112.32 (-1.1%) | 1 | 🎯 |
 
 ---
@@ -88,6 +88,7 @@ Pick a stock and open a trade in one click:
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-24 05:20 | @SolanaLeeky | 📈 BUY | CLIANYTHING | 5 | $274.16 | $1,370.80 |
 | 2026-03-24 05:19 | @SolanaLeeky | 📉 SELL | REACT | 5 | $731.54 | $3,657.70 |
 | 2026-03-23 07:00 | @neurobytex | 📈 BUY | REACT | 5 | $753.25 | $3,766.25 |
 | 2026-03-22 11:21 | @SolanaLeeky | 📈 BUY | REACT | 5 | $562.76 | $2,813.80 |
@@ -97,7 +98,6 @@ Pick a stock and open a trade in one click:
 | 2026-03-22 06:24 | @SolanaLeeky | 📉 SHORT | DENO | 2 | $287.85 | $575.70 |
 | 2026-03-22 05:32 | @SolanaLeeky | 📉 SELL | SVELTE | 3 | $401.61 | $1,204.83 |
 | 2026-03-22 05:29 | @SolanaLeeky | 📉 SELL | GSTACK | 10 | $216.10 | $2,161.00 |
-| 2026-03-22 05:23 | @SolanaLeeky | 📈 BUY | SVELTE | 3 | $401.61 | $1,204.83 |
 
 ---
 
