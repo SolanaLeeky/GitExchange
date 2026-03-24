@@ -419,6 +419,19 @@
         "result": "rejected_validation",
         "user": "SolanaLeeky"
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-24T05:19:55Z",
+      "duration_s": 3.02,
+      "details": {
+        "result": "executed",
+        "user": "SolanaLeeky",
+        "action": "SELL",
+        "ticker": "react",
+        "qty": 5,
+        "price": 731.54
+      }
     }
   ]
 }
