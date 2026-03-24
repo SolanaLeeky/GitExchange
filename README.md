@@ -57,7 +57,7 @@ Pick a stock and open a trade in one click:
 | Ticker | Name | Price | 24h Change | Volume | Market Cap | Trade |
 |--------|------|-------|------------|--------|------------|-------|
 | **VSCODE** | microsoft/vscode | $848.05 | 🟢 +4.92% | 3 | $424.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+vscode+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+vscode+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+vscode+10&body=Adjust+quantity+in+the+title+then+submit) |
-| **REACT** | facebook/react | $731.54 | 🟢 +9.59% | 17 | $365.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+react+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **REACT** | facebook/react | $731.54 | 🟢 +9.59% | 22 | $365.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+react+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **NEXTJS** | vercel/next.js | $602.72 | 🟢 +0.94% | 5 | $301.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **SVELTE** | sveltejs/svelte | $414.25 | 🟢 +17.36% | 6 | $207.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+svelte+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+svelte+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+svelte+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $382.44 | 🟢 +38.27% | 0 | $191.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -73,7 +73,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,098.07 | +$3,098.07 (+31.0%) | 10 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $13,094.41 | +$3,094.41 (+30.9%) | 11 | 🎯 🐦 🦊 🔔 📄 |
 | 🥈 | @neurobytex | $9,887.68 | -$112.32 (-1.1%) | 1 | 🎯 |
 
 ---
@@ -88,6 +88,7 @@ Pick a stock and open a trade in one click:
 
 | Time | Trader | Action | Stock | Qty | Price | Total |
 |------|--------|--------|-------|-----|-------|-------|
+| 2026-03-24 05:19 | @SolanaLeeky | 📉 SELL | REACT | 5 | $731.54 | $3,657.70 |
 | 2026-03-23 07:00 | @neurobytex | 📈 BUY | REACT | 5 | $753.25 | $3,766.25 |
 | 2026-03-22 11:21 | @SolanaLeeky | 📈 BUY | REACT | 5 | $562.76 | $2,813.80 |
 | 2026-03-22 08:13 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $574.80 | $574.80 |
@@ -97,7 +98,6 @@ Pick a stock and open a trade in one click:
 | 2026-03-22 05:32 | @SolanaLeeky | 📉 SELL | SVELTE | 3 | $401.61 | $1,204.83 |
 | 2026-03-22 05:29 | @SolanaLeeky | 📉 SELL | GSTACK | 10 | $216.10 | $2,161.00 |
 | 2026-03-22 05:23 | @SolanaLeeky | 📈 BUY | SVELTE | 3 | $401.61 | $1,204.83 |
-| 2026-03-22 03:50 | @SolanaLeeky | 📈 BUY | GSTACK | 10 | $72.70 | $727.00 |
 
 ---
 
