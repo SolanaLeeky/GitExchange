@@ -667,6 +667,15 @@
         "traders_recalculated": 2,
         "api_failures": 10
       }
+    },
+    {
+      "engine": "trade",
+      "timestamp": "2026-03-28T10:44:31Z",
+      "duration_s": 2.65,
+      "details": {
+        "result": "portfolio_view",
+        "user": "SolanaLeeky"
+      }
     }
   ]
 }
