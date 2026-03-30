@@ -767,6 +767,19 @@
         "result": "rejected_validation",
         "user": "neurobytex"
       }
+    },
+    {
+      "engine": "events",
+      "timestamp": "2026-03-30T01:28:59Z",
+      "duration_s": 4.84,
+      "details": {
+        "total_events": 2,
+        "dividends": 2,
+        "ipos": 0,
+        "margin_calls": 0,
+        "achievements": 0,
+        "history_rotated": 0
+      }
     }
   ]
 }
