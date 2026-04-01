@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-03-31T18:56:53Z",
+  "last_updated": "2026-04-01T01:49:17Z",
   "market_status": "open",
-  "total_market_cap": 2044500.0,
+  "total_market_cap": 2158080.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -188,6 +188,26 @@
         "commits_week": 10,
         "issue_response_hrs": 96.1,
         "contributors": 41
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "pretext": {
+      "full_name": "chenglou/pretext",
+      "price": 227.16,
+      "prev_price": 227.16,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 113580.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-04-01",
+      "metrics": {
+        "stars": 27442,
+        "forks": 1228,
+        "commits_week": 31,
+        "issue_response_hrs": 6.7,
+        "contributors": 4
       },
       "tags": [
         "ipo-new"

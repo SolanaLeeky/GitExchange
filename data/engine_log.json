@@ -873,6 +873,19 @@
         "traders_recalculated": 2,
         "api_failures": 10
       }
+    },
+    {
+      "engine": "events",
+      "timestamp": "2026-04-01T01:49:17Z",
+      "duration_s": 152.78,
+      "details": {
+        "total_events": 2,
+        "dividends": 1,
+        "ipos": 1,
+        "margin_calls": 0,
+        "achievements": 0,
+        "history_rotated": 0
+      }
     }
   ]
 }
