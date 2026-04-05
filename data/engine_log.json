@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "engine": "trade",
-      "timestamp": "2026-03-22T03:42:44Z",
-      "duration_s": 3.12,
-      "details": {
-        "result": "executed",
-        "user": "SolanaLeeky",
-        "action": "BUY",
-        "ticker": "nextjs",
-        "qty": 5,
-        "price": 553.43
-      }
-    },
-    {
       "engine": "events",
       "timestamp": "2026-03-22T03:48:53Z",
       "duration_s": 153.41,
@@ -1074,6 +1061,16 @@
         "margin_calls": 0,
         "achievements": 0,
         "history_rotated": 0
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-05T01:59:08Z",
+      "duration_s": 92.28,
+      "details": {
+        "stocks_updated": 12,
+        "traders_recalculated": 2,
+        "api_failures": 12
       }
     }
   ]
