@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-05",
+  "events": [
+    {
+      "type": "DIVIDEND",
+      "ticker": "vscode",
+      "amount_per_share": 4.4,
+      "total_paid": 13.2,
+      "recipients": 1,
+      "commits_week": 499,
+      "timestamp": "2026-04-05T01:30:16Z"
+    },
+    {
+      "type": "DIVIDEND",
+      "ticker": "nextjs",
+      "amount_per_share": 2.21,
+      "total_paid": 11.05,
+      "recipients": 1,
+      "commits_week": 97,
+      "timestamp": "2026-04-05T01:30:16Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "nemoclaw",
+      "full_name": "NVIDIA/NemoClaw",
+      "initial_price": 270.18,
+      "stars_at_ipo": 18456,
+      "timestamp": "2026-04-05T01:30:16Z"
+    }
+  ]
+}

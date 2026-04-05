@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.23M | 11 Stocks | 2 Traders | Last Update: 2026-04-04 18:35 UTC
+🟢 **Market OPEN** | Total Cap: $2.37M | 12 Stocks | 2 Traders | Last Update: 2026-04-05 01:30 UTC
 
 📈 **Top Gainer**: CLIANYTHING +219.95% ($224.38) | 📉 **Top Loser**: NEXTJS -28.70% ($442.94)
 
@@ -62,6 +62,7 @@ Pick a stock and open a trade in one click:
 | **NEXTJS** | vercel/next.js | $442.94 | 🔴 -28.70% | 5 | $221.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **SVELTE** | sveltejs/svelte | $428.08 | 🟢 +2.50% | 6 | $214.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+svelte+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+svelte+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+svelte+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $298.53 | 🟢 +2.08% | 0 | $149.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **NEMOCLAW** | NVIDIA/NemoClaw | $270.18 | ⚪ 0.00% | 0 | $135.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nemoclaw+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nemoclaw+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nemoclaw+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $267.29 | 🟢 +2.70% | 0 | $133.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **GSTACK** | garrytan/gstack | $265.54 | 🟢 +2.06% | 20 | $132.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+gstack+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PRETEXT** | chenglou/pretext | $229.82 | 🟢 +5.43% | 0 | $114.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+pretext+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+pretext+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+pretext+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -74,7 +75,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,154.05 | +$2,154.05 (+21.5%) | 12 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $12,178.30 | +$2,178.30 (+21.8%) | 12 | 🎯 🐦 🦊 🔔 📄 |
 | 🥈 | @neurobytex | $9,973.68 | -$26.32 (-0.3%) | 1 | 🎯 🦊 |
 
 ---

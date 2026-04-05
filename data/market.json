@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-04T18:35:30Z",
+  "last_updated": "2026-04-05T01:30:16Z",
   "market_status": "open",
-  "total_market_cap": 2234260.0,
+  "total_market_cap": 2369350.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -208,6 +208,26 @@
         "commits_week": 53,
         "issue_response_hrs": 59.8,
         "contributors": 5
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "nemoclaw": {
+      "full_name": "NVIDIA/NemoClaw",
+      "price": 270.18,
+      "prev_price": 270.18,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 135090.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-04-05",
+      "metrics": {
+        "stars": 18456,
+        "forks": 2202,
+        "commits_week": 144,
+        "issue_response_hrs": 154.4,
+        "contributors": 68
       },
       "tags": [
         "ipo-new"
