@@ -2,19 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-22T05:32:22Z",
-      "duration_s": 3.74,
-      "details": {
-        "result": "executed",
-        "user": "SolanaLeeky",
-        "action": "SELL",
-        "ticker": "svelte",
-        "qty": 3,
-        "price": 401.61
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-22T06:12:34Z",
       "duration_s": 2.68,
       "details": {
@@ -1055,6 +1042,16 @@
       "engine": "price",
       "timestamp": "2026-04-06T07:27:57Z",
       "duration_s": 331.41,
+      "details": {
+        "stocks_updated": 13,
+        "traders_recalculated": 2,
+        "api_failures": 13
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-06T13:00:22Z",
+      "duration_s": 138.82,
       "details": {
         "stocks_updated": 13,
         "traders_recalculated": 2,
