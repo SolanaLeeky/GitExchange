@@ -2,19 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-22T05:29:22Z",
-      "duration_s": 2.97,
-      "details": {
-        "result": "executed",
-        "user": "SolanaLeeky",
-        "action": "SELL",
-        "ticker": "gstack",
-        "qty": 10,
-        "price": 216.1
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-22T05:32:22Z",
       "duration_s": 3.74,
       "details": {
@@ -1058,6 +1045,16 @@
       "engine": "price",
       "timestamp": "2026-04-06T02:00:56Z",
       "duration_s": 117.03,
+      "details": {
+        "stocks_updated": 13,
+        "traders_recalculated": 2,
+        "api_failures": 13
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-06T07:27:57Z",
+      "duration_s": 331.41,
       "details": {
         "stocks_updated": 13,
         "traders_recalculated": 2,
