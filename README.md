@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.36M | 12 Stocks | 2 Traders | Last Update: 2026-04-05 18:38 UTC
+🟢 **Market OPEN** | Total Cap: $2.47M | 13 Stocks | 2 Traders | Last Update: 2026-04-06 01:29 UTC
 
 📈 **Top Gainer**: NEXTJS +34.48% ($695.94) | 📉 **Top Loser**: NEMOCLAW -48.68% ($186.95)
 
@@ -67,6 +67,7 @@ Pick a stock and open a trade in one click:
 | **GSTACK** | garrytan/gstack | $258.56 | 🟢 +5.12% | 20 | $129.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+gstack+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PRETEXT** | chenglou/pretext | $255.31 | 🟢 +16.72% | 0 | $127.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+pretext+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+pretext+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+pretext+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLI** | googleworkspace/cli | $220.45 | 🟢 +11.62% | 0 | $110.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+cli+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+cli+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+cli+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **OPENCLAUDE** | Gitlawb/openclaude | $219.06 | ⚪ 0.00% | 0 | $109.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+openclaude+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+openclaude+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+openclaude+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **NEMOCLAW** | NVIDIA/NemoClaw | $186.95 | 🔴 -48.68% | 0 | $93.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nemoclaw+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nemoclaw+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nemoclaw+10&body=Adjust+quantity+in+the+title+then+submit) |
 
 ---
@@ -75,7 +76,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,843.43 | +$2,843.43 (+28.4%) | 12 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $12,860.83 | +$2,860.83 (+28.6%) | 12 | 🎯 🐦 🦊 🔔 📄 |
 | 🥈 | @neurobytex | $9,110.88 | -$889.12 (-8.9%) | 1 | 🎯 🦊 |
 
 ---
