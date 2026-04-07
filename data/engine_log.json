@@ -2,19 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-22T06:24:14Z",
-      "duration_s": 3.62,
-      "details": {
-        "result": "executed",
-        "user": "SolanaLeeky",
-        "action": "SHORT",
-        "ticker": "deno",
-        "qty": 2,
-        "price": 287.85
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-22T06:32:17Z",
       "duration_s": 2.94,
       "details": {
@@ -1057,6 +1044,19 @@
         "stocks_updated": 13,
         "traders_recalculated": 2,
         "api_failures": 13
+      }
+    },
+    {
+      "engine": "events",
+      "timestamp": "2026-04-07T01:27:27Z",
+      "duration_s": 39.1,
+      "details": {
+        "total_events": 1,
+        "dividends": 0,
+        "ipos": 1,
+        "margin_calls": 0,
+        "achievements": 0,
+        "history_rotated": 0
       }
     }
   ]

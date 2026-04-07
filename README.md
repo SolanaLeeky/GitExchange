@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.66M | 13 Stocks | 2 Traders | Last Update: 2026-04-06 18:52 UTC
+🟢 **Market OPEN** | Total Cap: $2.76M | 14 Stocks | 2 Traders | Last Update: 2026-04-07 01:27 UTC
 
 📈 **Top Gainer**: NEMOCLAW +19.12% ($346.53) | 📉 **Top Loser**: CLIANYTHING -41.38% ($210.23)
 
@@ -69,6 +69,7 @@ Pick a stock and open a trade in one click:
 | **CLI** | googleworkspace/cli | $272.26 | 🟢 +4.82% | 0 | $136.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+cli+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+cli+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+cli+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $257.59 | 🔴 -1.12% | 0 | $128.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLIANYTHING** | HKUDS/CLI-Anything | $210.23 | 🔴 -41.38% | 5 | $105.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clianything+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clianything+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+clianything+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **AWESOMEDESIGNMD** | VoltAgent/awesome-design-md | $206.96 | ⚪ 0.00% | 0 | $103.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+awesomedesignmd+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+awesomedesignmd+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+awesomedesignmd+10&body=Adjust+quantity+in+the+title+then+submit) |
 
 ---
 
