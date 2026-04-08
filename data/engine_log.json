@@ -2,15 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-22T07:48:57Z",
-      "duration_s": 3.53,
-      "details": {
-        "result": "rejected_validation",
-        "user": "SolanaLeeky"
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-22T07:51:55Z",
       "duration_s": 2.95,
       "details": {
@@ -1050,6 +1041,16 @@
       "engine": "price",
       "timestamp": "2026-04-08T07:13:49Z",
       "duration_s": 171.31,
+      "details": {
+        "stocks_updated": 14,
+        "traders_recalculated": 2,
+        "api_failures": 14
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-08T13:20:46Z",
+      "duration_s": 658.96,
       "details": {
         "stocks_updated": 14,
         "traders_recalculated": 2,
