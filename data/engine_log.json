@@ -2,19 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-22T07:11:48Z",
-      "duration_s": 3.2,
-      "details": {
-        "result": "executed",
-        "user": "SolanaLeeky",
-        "action": "BUY",
-        "ticker": "vscode",
-        "qty": 1,
-        "price": 574.8
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-22T07:32:50Z",
       "duration_s": 2.89,
       "details": {
@@ -1052,6 +1039,19 @@
         "stocks_updated": 14,
         "traders_recalculated": 2,
         "api_failures": 14
+      }
+    },
+    {
+      "engine": "events",
+      "timestamp": "2026-04-08T01:27:38Z",
+      "duration_s": 10.15,
+      "details": {
+        "total_events": 1,
+        "dividends": 1,
+        "ipos": 0,
+        "margin_calls": 0,
+        "achievements": 0,
+        "history_rotated": 0
       }
     }
   ]
