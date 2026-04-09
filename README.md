@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.46M | 14 Stocks | 2 Traders | Last Update: 2026-04-08 19:11 UTC
+🟢 **Market OPEN** | Total Cap: $2.72M | 16 Stocks | 2 Traders | Last Update: 2026-04-09 01:20 UTC
 
 📈 **Top Gainer**: NEXTJS +40.25% ($663.72) | 📉 **Top Loser**: CLIANYTHING -64.76% ($73.94)
 
@@ -63,7 +63,9 @@ Pick a stock and open a trade in one click:
 | **DENO** | denoland/deno | $364.84 | 🔴 -19.52% | 2 | $182.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+deno+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PAPERCLIP** | paperclipai/paperclip | $330.21 | 🔴 -13.13% | 0 | $165.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+paperclip+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+paperclip+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **GSTACK** | garrytan/gstack | $266.52 | 🔴 -3.85% | 20 | $133.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gstack+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gstack+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+gstack+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **MEMPALACE** | milla-jovovich/mempalace | $266.40 | ⚪ 0.00% | 0 | $133.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+mempalace+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+mempalace+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+mempalace+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **AUTORESEARCH** | karpathy/autoresearch | $257.27 | 🔴 -3.76% | 0 | $128.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+autoresearch+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+autoresearch+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **CAREEROPS** | santifer/career-ops | $243.74 | ⚪ 0.00% | 0 | $121.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+careerops+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+careerops+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+careerops+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **PRETEXT** | chenglou/pretext | $238.39 | 🔴 -6.52% | 0 | $119.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+pretext+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+pretext+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+pretext+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **OPENCLAUDE** | Gitlawb/openclaude | $230.78 | 🔴 -9.68% | 0 | $115.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+openclaude+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+openclaude+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+openclaude+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **AWESOMEDESIGNMD** | VoltAgent/awesome-design-md | $209.54 | 🔴 -0.66% | 0 | $104.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+awesomedesignmd+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+awesomedesignmd+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+awesomedesignmd+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -77,7 +79,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,575.98 | +$2,575.98 (+25.8%) | 12 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $12,604.73 | +$2,604.73 (+26.0%) | 12 | 🎯 🐦 🦊 🔔 📄 |
 | 🥈 | @neurobytex | $9,841.63 | -$158.37 (-1.6%) | 1 | 🎯 🦊 |
 
 ---

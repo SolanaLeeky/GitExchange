@@ -1,0 +1,39 @@
+{
+  "date": "2026-04-09",
+  "events": [
+    {
+      "type": "DIVIDEND",
+      "ticker": "vscode",
+      "amount_per_share": 4.05,
+      "total_paid": 12.15,
+      "recipients": 1,
+      "commits_week": 308,
+      "timestamp": "2026-04-09T01:20:01Z"
+    },
+    {
+      "type": "DIVIDEND",
+      "ticker": "nextjs",
+      "amount_per_share": 3.32,
+      "total_paid": 16.6,
+      "recipients": 1,
+      "commits_week": 78,
+      "timestamp": "2026-04-09T01:20:01Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "mempalace",
+      "full_name": "milla-jovovich/mempalace",
+      "initial_price": 266.4,
+      "stars_at_ipo": 27391,
+      "timestamp": "2026-04-09T01:20:01Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "careerops",
+      "full_name": "santifer/career-ops",
+      "initial_price": 243.74,
+      "stars_at_ipo": 24566,
+      "timestamp": "2026-04-09T01:20:01Z"
+    }
+  ]
+}
