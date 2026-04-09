@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "engine": "trade",
-      "timestamp": "2026-03-22T11:21:13Z",
-      "duration_s": 3.56,
-      "details": {
-        "result": "executed",
-        "user": "SolanaLeeky",
-        "action": "BUY",
-        "ticker": "react",
-        "qty": 5,
-        "price": 562.76
-      }
-    },
-    {
       "engine": "price",
       "timestamp": "2026-03-22T12:40:29Z",
       "duration_s": 100.47,
@@ -1053,6 +1040,16 @@
       "engine": "price",
       "timestamp": "2026-04-09T01:51:33Z",
       "duration_s": 194.34,
+      "details": {
+        "stocks_updated": 16,
+        "traders_recalculated": 2,
+        "api_failures": 16
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-09T07:18:49Z",
+      "duration_s": 235.89,
       "details": {
         "stocks_updated": 16,
         "traders_recalculated": 2,
