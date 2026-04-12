@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-12",
+  "events": [
+    {
+      "type": "DIVIDEND",
+      "ticker": "vscode",
+      "amount_per_share": 4.39,
+      "total_paid": 13.17,
+      "recipients": 1,
+      "commits_week": 605,
+      "timestamp": "2026-04-12T00:17:34Z"
+    },
+    {
+      "type": "DIVIDEND",
+      "ticker": "nextjs",
+      "amount_per_share": 3.13,
+      "total_paid": 15.65,
+      "recipients": 1,
+      "commits_week": 163,
+      "timestamp": "2026-04-12T00:17:34Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "graphify",
+      "full_name": "safishamsi/graphify",
+      "initial_price": 237.12,
+      "stars_at_ipo": 22073,
+      "timestamp": "2026-04-12T00:17:34Z"
+    }
+  ]
+}

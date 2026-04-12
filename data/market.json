@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-11T18:11:58Z",
+  "last_updated": "2026-04-12T00:17:34Z",
   "market_status": "open",
-  "total_market_cap": 2913240.0,
+  "total_market_cap": 3031800.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -308,6 +308,26 @@
         "commits_week": 85,
         "issue_response_hrs": 2.2,
         "contributors": 20
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "graphify": {
+      "full_name": "safishamsi/graphify",
+      "price": 237.12,
+      "prev_price": 237.12,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 118560.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-04-12",
+      "metrics": {
+        "stars": 22073,
+        "forks": 2293,
+        "commits_week": 124,
+        "issue_response_hrs": 8.4,
+        "contributors": 6
       },
       "tags": [
         "ipo-new"

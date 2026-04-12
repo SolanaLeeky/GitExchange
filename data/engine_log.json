@@ -2,15 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-24T05:18:19Z",
-      "duration_s": 3.12,
-      "details": {
-        "result": "portfolio_view",
-        "user": "SolanaLeeky"
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-24T05:19:06Z",
       "duration_s": 3.11,
       "details": {
@@ -1053,6 +1044,19 @@
         "stocks_updated": 16,
         "traders_recalculated": 2,
         "api_failures": 16
+      }
+    },
+    {
+      "engine": "events",
+      "timestamp": "2026-04-12T00:17:34Z",
+      "duration_s": 26.72,
+      "details": {
+        "total_events": 3,
+        "dividends": 2,
+        "ipos": 1,
+        "margin_calls": 0,
+        "achievements": 0,
+        "history_rotated": 0
       }
     }
   ]
