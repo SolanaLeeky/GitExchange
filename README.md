@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.99M | 17 Stocks | 2 Traders | Last Update: 2026-04-13 18:38 UTC
+🟢 **Market OPEN** | Total Cap: $3.09M | 18 Stocks | 2 Traders | Last Update: 2026-04-14 00:21 UTC
 
 📈 **Top Gainer**: DENO +35.38% ($395.25) | 📉 **Top Loser**: MEMPALACE -25.82% ($347.24)
 
@@ -72,6 +72,7 @@ Pick a stock and open a trade in one click:
 | **CLIANYTHING** | HKUDS/CLI-Anything | $241.18 | 🔴 -9.97% | 5 | $120.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clianything+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clianything+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+clianything+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **GRAPHIFY** | safishamsi/graphify | $210.49 | 🔴 -18.07% | 0 | $105.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+graphify+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+graphify+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+graphify+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **NEMOCLAW** | NVIDIA/NemoClaw | $207.59 | 🔴 -0.91% | 0 | $103.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nemoclaw+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nemoclaw+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nemoclaw+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **CAVEMAN** | JuliusBrussee/caveman | $201.03 | ⚪ 0.00% | 0 | $100.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+caveman+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+caveman+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+caveman+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **CLI** | googleworkspace/cli | $194.55 | 🔴 -0.60% | 0 | $97.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+cli+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+cli+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+cli+10&body=Adjust+quantity+in+the+title+then+submit) |
 
 ---
@@ -80,7 +81,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,242.71 | +$3,242.71 (+32.4%) | 12 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $13,254.83 | +$3,254.83 (+32.5%) | 12 | 🎯 🐦 🦊 🔔 📄 |
 | 🥈 | @neurobytex | $9,145.38 | -$854.62 (-8.5%) | 1 | 🎯 🦊 |
 
 ---

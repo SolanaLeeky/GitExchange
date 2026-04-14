@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-13T18:38:12Z",
+  "last_updated": "2026-04-14T00:21:54Z",
   "market_status": "open",
-  "total_market_cap": 2986250.0,
+  "total_market_cap": 3086765.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -328,6 +328,26 @@
         "commits_week": 10,
         "issue_response_hrs": 4.1,
         "contributors": 6
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "caveman": {
+      "full_name": "JuliusBrussee/caveman",
+      "price": 201.03,
+      "prev_price": 201.03,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 100515.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-04-14",
+      "metrics": {
+        "stars": 26106,
+        "forks": 1213,
+        "commits_week": 3,
+        "issue_response_hrs": 22.4,
+        "contributors": 18
       },
       "tags": [
         "ipo-new"
