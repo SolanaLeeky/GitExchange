@@ -1,0 +1,23 @@
+{
+  "date": "2026-04-15",
+  "events": [
+    {
+      "type": "DIVIDEND",
+      "ticker": "vscode",
+      "amount_per_share": 4.2,
+      "total_paid": 12.6,
+      "recipients": 1,
+      "commits_week": 222,
+      "timestamp": "2026-04-15T00:22:15Z"
+    },
+    {
+      "type": "DIVIDEND",
+      "ticker": "nextjs",
+      "amount_per_share": 3.25,
+      "total_paid": 16.25,
+      "recipients": 1,
+      "commits_week": 55,
+      "timestamp": "2026-04-15T00:22:15Z"
+    }
+  ]
+}
