@@ -2,15 +2,6 @@
   "runs": [
     {
       "engine": "trade",
-      "timestamp": "2026-03-29T18:35:43Z",
-      "duration_s": 3.07,
-      "details": {
-        "result": "portfolio_view",
-        "user": "neurobytex"
-      }
-    },
-    {
-      "engine": "trade",
       "timestamp": "2026-03-29T18:36:51Z",
       "duration_s": 2.86,
       "details": {
@@ -1052,6 +1043,16 @@
       "engine": "price",
       "timestamp": "2026-04-18T06:27:46Z",
       "duration_s": 121.36,
+      "details": {
+        "stocks_updated": 18,
+        "traders_recalculated": 2,
+        "api_failures": 18
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-18T12:14:42Z",
+      "duration_s": 186.62,
       "details": {
         "stocks_updated": 18,
         "traders_recalculated": 2,
