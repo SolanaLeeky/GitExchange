@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.99M | 18 Stocks | 2 Traders | Last Update: 2026-04-21 18:37 UTC
+🟢 **Market OPEN** | Total Cap: $2.99M | 18 Stocks | 2 Traders | Last Update: 2026-04-22 00:19 UTC
 
 📈 **Top Gainer**: DENO +19.67% ($411.36) | 📉 **Top Loser**: SVELTE -10.28% ($375.52)
 
@@ -81,7 +81,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,932.60 | +$2,932.60 (+29.3%) | 12 | 🎯 🐦 🦊 🔔 📄 |
+| 🥇 | @SolanaLeeky | $12,945.53 | +$2,945.53 (+29.5%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $9,135.33 | -$864.67 (-8.6%) | 1 | 🎯 🦊 |
 
 ---
@@ -99,13 +99,6 @@ Pick a stock and open a trade in one click:
 | 2026-03-24 05:20 | @SolanaLeeky | 📈 BUY | CLIANYTHING | 5 | $274.16 | $1,370.80 |
 | 2026-03-24 05:19 | @SolanaLeeky | 📉 SELL | REACT | 5 | $731.54 | $3,657.70 |
 | 2026-03-23 07:00 | @neurobytex | 📈 BUY | REACT | 5 | $753.25 | $3,766.25 |
-| 2026-03-22 11:21 | @SolanaLeeky | 📈 BUY | REACT | 5 | $562.76 | $2,813.80 |
-| 2026-03-22 08:13 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $574.80 | $574.80 |
-| 2026-03-22 07:11 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $574.80 | $574.80 |
-| 2026-03-22 06:32 | @SolanaLeeky | 📈 BUY | VSCODE | 1 | $680.70 | $680.70 |
-| 2026-03-22 06:24 | @SolanaLeeky | 📉 SHORT | DENO | 2 | $287.85 | $575.70 |
-| 2026-03-22 05:32 | @SolanaLeeky | 📉 SELL | SVELTE | 3 | $401.61 | $1,204.83 |
-| 2026-03-22 05:29 | @SolanaLeeky | 📉 SELL | GSTACK | 10 | $216.10 | $2,161.00 |
 
 ---
 
