@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $3.07M | 18 Stocks | 2 Traders | Last Update: 2026-04-22 18:40 UTC
+🟢 **Market OPEN** | Total Cap: $3.07M | 18 Stocks | 2 Traders | Last Update: 2026-04-23 00:24 UTC
 
 📈 **Top Gainer**: SVELTE +10.79% ($422.57) | 📉 **Top Loser**: CAVEMAN -14.17% ($206.82)
 
@@ -81,8 +81,8 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,179.90 | +$3,179.90 (+31.8%) | 12 | 🦊 🎯 🐦 🔔 💎 |
-| 🥈 | @neurobytex | $9,185.68 | -$814.32 (-8.1%) | 1 | 🎯 🦊 |
+| 🥇 | @SolanaLeeky | $13,193.04 | +$3,193.04 (+31.9%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥈 | @neurobytex | $9,185.68 | -$814.32 (-8.1%) | 1 | 🎯 💎 🦊 |
 
 ---
 
@@ -98,7 +98,6 @@ Pick a stock and open a trade in one click:
 |------|--------|--------|-------|-----|-------|-------|
 | 2026-03-24 05:20 | @SolanaLeeky | 📈 BUY | CLIANYTHING | 5 | $274.16 | $1,370.80 |
 | 2026-03-24 05:19 | @SolanaLeeky | 📉 SELL | REACT | 5 | $731.54 | $3,657.70 |
-| 2026-03-23 07:00 | @neurobytex | 📈 BUY | REACT | 5 | $753.25 | $3,766.25 |
 
 ---
 
