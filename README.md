@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $2.91M | 18 Stocks | 2 Traders | Last Update: 2026-04-23 18:26 UTC
+🟢 **Market OPEN** | Total Cap: $2.91M | 18 Stocks | 2 Traders | Last Update: 2026-04-24 00:30 UTC
 
 📈 **Top Gainer**: NEXTJS +8.38% ($470.15) | 📉 **Top Loser**: PAPERCLIP -14.56% ($253.18)
 
@@ -81,7 +81,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,888.24 | +$2,888.24 (+28.9%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $12,900.69 | +$2,900.69 (+29.0%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $9,785.28 | -$214.72 (-2.1%) | 1 | 🎯 💎 🦊 |
 
 ---
@@ -94,10 +94,7 @@ Pick a stock and open a trade in one click:
 
 ## Recent Trades
 
-| Time | Trader | Action | Stock | Qty | Price | Total |
-|------|--------|--------|-------|-----|-------|-------|
-| 2026-03-24 05:20 | @SolanaLeeky | 📈 BUY | CLIANYTHING | 5 | $274.16 | $1,370.80 |
-| 2026-03-24 05:19 | @SolanaLeeky | 📉 SELL | REACT | 5 | $731.54 | $3,657.70 |
+*No trades yet.*
 
 ---
 
