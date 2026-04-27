@@ -190,3 +190,11 @@ Prices update every 6 hours. Market data is committed to this repo.
 [Open a Trade](https://github.com/SolanaLeeky/GitExchange/issues/new/choose) | [View Portfolio](https://github.com/SolanaLeeky/GitExchange/issues/new?title=PORTFOLIO&body=Submit+to+view+your+holdings)
 
 </div>
+
+## 💰 Bounty Contribution
+
+- **Task:** IPO: ultraworkers/claw-code now tradeable!
+- **Reward:** $671
+- **Source:** GitHub-Paid
+- **Date:** 2026-04-27
+
