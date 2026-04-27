@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $3.24M | 18 Stocks | 2 Traders | Last Update: 2026-04-26 18:17 UTC
+🟢 **Market OPEN** | Total Cap: $3.58M | 19 Stocks | 2 Traders | Last Update: 2026-04-27 00:21 UTC
 
 📈 **Top Gainer**: DENO +79.11% ($609.06) | 📉 **Top Loser**: NEMOCLAW -57.89% ($207.12)
 
@@ -57,6 +57,7 @@ Pick a stock and open a trade in one click:
 | Ticker | Name | Price | 24h Change | Volume | Market Cap | Trade |
 |--------|------|-------|------------|--------|------------|-------|
 | **NEXTJS** | vercel/next.js | $692.77 | 🟢 +7.38% | 5 | $346.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+nextjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+nextjs+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **CLAWCODE** | ultraworkers/claw-code | $671.45 | ⚪ 0.00% | 0 | $335.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+clawcode+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+clawcode+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+clawcode+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **VSCODE** | microsoft/vscode | $613.43 | 🟢 +5.18% | 3 | $306.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+vscode+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+vscode+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+vscode+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **DENO** | denoland/deno | $609.06 | 🟢 +79.11% | 2 | $304.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+deno+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+deno+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+deno+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **REACT** | facebook/react | $593.41 | 🔴 -15.06% | 22 | $296.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+react+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+react+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+react+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -81,7 +82,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,100.17 | +$3,100.17 (+31.0%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $13,117.47 | +$3,117.47 (+31.2%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $9,197.03 | -$802.97 (-8.0%) | 1 | 🎯 💎 🦊 |
 
 ---

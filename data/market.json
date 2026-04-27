@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-04-26T18:17:28Z",
+  "last_updated": "2026-04-27T00:21:07Z",
   "market_status": "open",
-  "total_market_cap": 3244470.0,
+  "total_market_cap": 3580195.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -348,6 +348,26 @@
         "commits_week": 0,
         "issue_response_hrs": 88.5,
         "contributors": 26
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "clawcode": {
+      "full_name": "ultraworkers/claw-code",
+      "price": 671.45,
+      "prev_price": 671.45,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 335725.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-04-27",
+      "metrics": {
+        "stars": 188581,
+        "forks": 109382,
+        "commits_week": 59,
+        "issue_response_hrs": 33.5,
+        "contributors": 2
       },
       "tags": [
         "ipo-new"
