@@ -1,19 +1,6 @@
 {
   "runs": [
     {
-      "engine": "events",
-      "timestamp": "2026-04-08T01:27:38Z",
-      "duration_s": 10.15,
-      "details": {
-        "total_events": 1,
-        "dividends": 1,
-        "ipos": 0,
-        "margin_calls": 0,
-        "achievements": 0,
-        "history_rotated": 0
-      }
-    },
-    {
       "engine": "price",
       "timestamp": "2026-04-08T01:59:54Z",
       "duration_s": 235.2,
@@ -1061,6 +1048,16 @@
         "margin_calls": 0,
         "achievements": 0,
         "history_rotated": 2
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-04-28T00:35:27Z",
+      "duration_s": 213.58,
+      "details": {
+        "stocks_updated": 19,
+        "traders_recalculated": 2,
+        "api_failures": 19
       }
     }
   ]
