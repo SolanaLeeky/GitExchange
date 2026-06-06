@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $4.62M | 34 Stocks | 2 Traders | Last Update: 2026-06-05 18:41 UTC
+🟢 **Market OPEN** | Total Cap: $4.62M | 34 Stocks | 2 Traders | Last Update: 2026-06-06 00:31 UTC
 
 📈 **Top Gainer**: DENO +60.83% ($565.76) | 📉 **Top Loser**: DESIGNMD -26.54% ($120.18)
 
@@ -97,7 +97,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,297.44 | +$2,297.44 (+23.0%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $12,319.83 | +$2,319.83 (+23.2%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $8,741.53 | -$1,258.47 (-12.6%) | 1 | 🎯 💎 🦊 |
 
 ---
