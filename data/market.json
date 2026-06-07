@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-06T18:53:32Z",
+  "last_updated": "2026-06-07T00:33:06Z",
   "market_status": "open",
-  "total_market_cap": 4852010.0,
+  "total_market_cap": 4955770.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -668,6 +668,26 @@
         "commits_week": 19,
         "issue_response_hrs": 67.4,
         "contributors": 13
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "zerolang": {
+      "full_name": "vercel-labs/zerolang",
+      "price": 207.52,
+      "prev_price": 207.52,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 103760.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-06-07",
+      "metrics": {
+        "stars": 4908,
+        "forks": 318,
+        "commits_week": 182,
+        "issue_response_hrs": 38.8,
+        "contributors": 1
       },
       "tags": [
         "ipo-new"
