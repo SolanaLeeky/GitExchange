@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-09T19:34:42Z",
+  "last_updated": "2026-06-10T00:35:47Z",
   "market_status": "open",
-  "total_market_cap": 5304970.0,
+  "total_market_cap": 5483735.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -688,6 +688,46 @@
         "commits_week": 75,
         "issue_response_hrs": 168.0,
         "contributors": 1
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "opencodereview": {
+      "full_name": "alibaba/open-code-review",
+      "price": 190.09,
+      "prev_price": 190.09,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 95045.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-06-10",
+      "metrics": {
+        "stars": 5766,
+        "forks": 288,
+        "commits_week": 20,
+        "issue_response_hrs": 36.9,
+        "contributors": 12
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "osiris": {
+      "full_name": "simplifaisoul/osiris",
+      "price": 167.44,
+      "prev_price": 167.44,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 83720.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-06-10",
+      "metrics": {
+        "stars": 5147,
+        "forks": 1044,
+        "commits_week": 7,
+        "issue_response_hrs": 89.8,
+        "contributors": 4
       },
       "tags": [
         "ipo-new"

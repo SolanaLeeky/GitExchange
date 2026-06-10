@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-10",
+  "events": [
+    {
+      "type": "DIVIDEND",
+      "ticker": "vscode",
+      "amount_per_share": 3.85,
+      "total_paid": 11.55,
+      "recipients": 1,
+      "commits_week": 171,
+      "timestamp": "2026-06-10T00:35:47Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "opencodereview",
+      "full_name": "alibaba/open-code-review",
+      "initial_price": 190.09,
+      "stars_at_ipo": 5766,
+      "timestamp": "2026-06-10T00:35:47Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "osiris",
+      "full_name": "simplifaisoul/osiris",
+      "initial_price": 167.44,
+      "stars_at_ipo": 5147,
+      "timestamp": "2026-06-10T00:35:47Z"
+    }
+  ]
+}
