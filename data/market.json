@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-12T18:41:34Z",
+  "last_updated": "2026-06-13T00:37:09Z",
   "market_status": "open",
-  "total_market_cap": 5279505.0,
+  "total_market_cap": 5361010.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -728,6 +728,26 @@
         "commits_week": 10,
         "issue_response_hrs": 21.7,
         "contributors": 4
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "mimocode": {
+      "full_name": "XiaomiMiMo/MiMo-Code",
+      "price": 163.01,
+      "prev_price": 163.01,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 81505.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-06-13",
+      "metrics": {
+        "stars": 6819,
+        "forks": 539,
+        "commits_week": 6,
+        "issue_response_hrs": 7.3,
+        "contributors": 3
       },
       "tags": [
         "ipo-new"
