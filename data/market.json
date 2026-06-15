@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-14T19:05:00Z",
+  "last_updated": "2026-06-15T00:36:21Z",
   "market_status": "open",
-  "total_market_cap": 5368985.0,
+  "total_market_cap": 5458725.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -748,6 +748,26 @@
         "commits_week": 9,
         "issue_response_hrs": 31.4,
         "contributors": 3
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "ponytail": {
+      "full_name": "DietrichGebert/ponytail",
+      "price": 179.48,
+      "prev_price": 179.48,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 89740.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-06-15",
+      "metrics": {
+        "stars": 8032,
+        "forks": 355,
+        "commits_week": 10,
+        "issue_response_hrs": 3.2,
+        "contributors": 10
       },
       "tags": [
         "ipo-new"

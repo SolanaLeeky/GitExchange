@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $5.37M | 38 Stocks | 2 Traders | Last Update: 2026-06-14 19:05 UTC
+🟢 **Market OPEN** | Total Cap: $5.46M | 39 Stocks | 2 Traders | Last Update: 2026-06-15 00:36 UTC
 
 📈 **Top Gainer**: CAREEROPS +27.63% ($419.53) | 📉 **Top Loser**: ZEROLANG -62.87% ($152.60)
 
@@ -83,6 +83,7 @@ Pick a stock and open a trade in one click:
 | **OSIRIS** | simplifaisoul/osiris | $188.01 | 🟢 +11.70% | 0 | $94.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+osiris+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+osiris+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+osiris+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **HUASHUDESIGN** | alchaincyf/huashu-design | $187.70 | 🟢 +9.13% | 0 | $93.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+huashudesign+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+huashudesign+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+huashudesign+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **GBRAIN** | garrytan/gbrain | $181.86 | 🔴 -6.68% | 0 | $90.9K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+gbrain+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+gbrain+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+gbrain+10&body=Adjust+quantity+in+the+title+then+submit) |
+| **PONYTAIL** | DietrichGebert/ponytail | $179.48 | ⚪ 0.00% | 0 | $89.7K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+ponytail+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+ponytail+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+ponytail+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **OPENCODEREVIEW** | alibaba/open-code-review | $177.11 | 🟢 +9.28% | 0 | $88.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+opencodereview+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+opencodereview+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+opencodereview+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **DESIGNMD** | google-labs-code/design.md | $177.04 | 🟢 +3.05% | 0 | $88.5K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+designmd+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+designmd+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+designmd+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **OPENMYTHOS** | kyegomez/OpenMythos | $174.37 | 🟢 +6.19% | 0 | $87.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+openmythos+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+openmythos+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+openmythos+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -101,7 +102,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,324.34 | +$3,324.34 (+33.2%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $13,340.64 | +$3,340.64 (+33.4%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $9,518.23 | -$481.77 (-4.8%) | 1 | 🎯 💎 🦊 |
 
 ---
