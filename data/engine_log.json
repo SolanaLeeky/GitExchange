@@ -1,15 +1,6 @@
 {
   "runs": [
     {
-      "engine": "trade",
-      "timestamp": "2026-05-01T01:13:09Z",
-      "duration_s": 3.43,
-      "details": {
-        "result": "rejected_validation",
-        "user": "neurobytex"
-      }
-    },
-    {
       "engine": "price",
       "timestamp": "2026-05-01T07:00:27Z",
       "duration_s": 348.17,
@@ -1056,6 +1047,16 @@
       "engine": "price",
       "timestamp": "2026-06-17T00:47:39Z",
       "duration_s": 149.86,
+      "details": {
+        "stocks_updated": 40,
+        "traders_recalculated": 2,
+        "api_failures": 40
+      }
+    },
+    {
+      "engine": "price",
+      "timestamp": "2026-06-17T08:05:43Z",
+      "duration_s": 982.09,
       "details": {
         "stocks_updated": 40,
         "traders_recalculated": 2,
