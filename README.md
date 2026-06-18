@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $5.50M | 40 Stocks | 2 Traders | Last Update: 2026-06-17 19:14 UTC
+🟢 **Market OPEN** | Total Cap: $5.50M | 40 Stocks | 2 Traders | Last Update: 2026-06-18 00:38 UTC
 
 📈 **Top Gainer**: NEXTJS +27.39% ($574.87) | 📉 **Top Loser**: ODYSSEUS -8.42% ($488.40)
 
@@ -103,7 +103,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,469.77 | +$3,469.77 (+34.7%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $13,495.64 | +$3,495.64 (+35.0%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $9,313.18 | -$686.82 (-6.9%) | 1 | 🎯 💎 🦊 |
 
 ---
