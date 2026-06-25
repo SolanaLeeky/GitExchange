@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $5.18M | 40 Stocks | 2 Traders | Last Update: 2026-06-24 18:38 UTC
+🟢 **Market OPEN** | Total Cap: $5.10M | 39 Stocks | 2 Traders | Last Update: 2026-06-25 00:32 UTC
 
 📈 **Top Gainer**: ORCASLICERBAMBULAB +5.97% ($172.19) | 📉 **Top Loser**: DESIGNMD -24.78% ($121.95)
 
@@ -88,7 +88,6 @@ Pick a stock and open a trade in one click:
 | **SKILLOPT** | microsoft/SkillOpt | $174.62 | 🟢 +5.88% | 0 | $87.3K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+skillopt+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+skillopt+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+skillopt+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **ORCASLICERBAMBULAB** | FULU-Foundation/OrcaSlicer-bambulab | $172.19 | 🟢 +5.97% | 0 | $86.1K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+orcaslicerbambulab+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+orcaslicerbambulab+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+orcaslicerbambulab+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **OPENMYTHOS** | kyegomez/OpenMythos | $163.54 | 🔴 -4.17% | 0 | $81.8K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+openmythos+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+openmythos+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+openmythos+10&body=Adjust+quantity+in+the+title+then+submit) |
-| **AWESOMEGPTIMAGE2APIANDPROMPTS** | EvoLinkAI/awesome-gpt-image-2-API-and-Prompts | $162.38 | 🔴 -9.54% | 0 | $81.2K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+awesomegptimage2apiandprompts+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+awesomegptimage2apiandprompts+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+awesomegptimage2apiandprompts+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **SDKJS** | unicity-astrid/sdk-js | $161.14 | 🔴 -0.36% | 0 | $80.6K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+sdkjs+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+sdkjs+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+sdkjs+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **DIRTYFRAG** | V4bel/dirtyfrag | $158.84 | 🔴 -0.99% | 0 | $79.4K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+dirtyfrag+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+dirtyfrag+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+dirtyfrag+10&body=Adjust+quantity+in+the+title+then+submit) |
 | **IMPROVE** | shadcn/improve | $153.91 | 🔴 -2.96% | 0 | $77.0K | [Buy](https://github.com/SolanaLeeky/GitExchange/issues/new?title=BUY+improve+10&body=Adjust+quantity+in+the+title+then+submit) [Sell](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SELL+improve+5&body=Adjust+quantity+in+the+title+then+submit) [Short](https://github.com/SolanaLeeky/GitExchange/issues/new?title=SHORT+improve+10&body=Adjust+quantity+in+the+title+then+submit) |
@@ -103,7 +102,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $12,907.31 | +$2,907.31 (+29.1%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $12,928.32 | +$2,928.32 (+29.3%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $9,189.73 | -$810.27 (-8.1%) | 1 | 🎯 💎 🦊 |
 
 ---
