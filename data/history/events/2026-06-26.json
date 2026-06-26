@@ -1,0 +1,31 @@
+{
+  "date": "2026-06-26",
+  "events": [
+    {
+      "type": "DIVIDEND",
+      "ticker": "vscode",
+      "amount_per_share": 4.13,
+      "total_paid": 12.39,
+      "recipients": 1,
+      "commits_week": 422,
+      "timestamp": "2026-06-26T00:34:15Z"
+    },
+    {
+      "type": "DIVIDEND",
+      "ticker": "nextjs",
+      "amount_per_share": 2.83,
+      "total_paid": 14.15,
+      "recipients": 1,
+      "commits_week": 88,
+      "timestamp": "2026-06-26T00:34:15Z"
+    },
+    {
+      "type": "IPO",
+      "ticker": "unlimitedocr",
+      "full_name": "baidu/Unlimited-OCR",
+      "initial_price": 164.39,
+      "stars_at_ipo": 8545,
+      "timestamp": "2026-06-26T00:34:15Z"
+    }
+  ]
+}

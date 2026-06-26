@@ -1,7 +1,7 @@
 {
-  "last_updated": "2026-06-25T19:22:45Z",
+  "last_updated": "2026-06-26T00:34:15Z",
   "market_status": "open",
-  "total_market_cap": 5162510.0,
+  "total_market_cap": 5244705.0,
   "stocks": {
     "react": {
       "full_name": "facebook/react",
@@ -789,6 +789,26 @@
         "commits_week": 0,
         "issue_response_hrs": 38.9,
         "contributors": 5
+      },
+      "tags": [
+        "ipo-new"
+      ]
+    },
+    "unlimitedocr": {
+      "full_name": "baidu/Unlimited-OCR",
+      "price": 164.39,
+      "prev_price": 164.39,
+      "change_pct": 0.0,
+      "volume_24h": 0,
+      "market_cap": 82195.0,
+      "shares_outstanding": 500,
+      "ipo_date": "2026-06-26",
+      "metrics": {
+        "stars": 8545,
+        "forks": 673,
+        "commits_week": 5,
+        "issue_response_hrs": 2.8,
+        "contributors": 1
       },
       "tags": [
         "ipo-new"
