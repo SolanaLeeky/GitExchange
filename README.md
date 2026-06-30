@@ -8,7 +8,7 @@
 
 Every repo is a ticker. Every issue is a trade. No signup, no wallet -- just your GitHub account.
 
-🟢 **Market OPEN** | Total Cap: $5.28M | 40 Stocks | 2 Traders | Last Update: 2026-06-29 18:43 UTC
+🟢 **Market OPEN** | Total Cap: $5.28M | 40 Stocks | 2 Traders | Last Update: 2026-06-30 00:31 UTC
 
 📈 **Top Gainer**: CAREEROPS +39.58% ($343.51) | 📉 **Top Loser**: OPENCLAUDE -42.14% ($126.53)
 
@@ -103,7 +103,7 @@ Pick a stock and open a trade in one click:
 
 | Rank | Trader | Portfolio Value | P&L | Trades | Achievements |
 |------|--------|-----------------|-----|--------|--------------|
-| 🥇 | @SolanaLeeky | $13,597.81 | +$3,597.81 (+36.0%) | 12 | 🦊 🎯 🐦 🔔 💎 |
+| 🥇 | @SolanaLeeky | $13,609.87 | +$3,609.87 (+36.1%) | 12 | 🦊 🎯 🐦 🔔 💎 |
 | 🥈 | @neurobytex | $8,832.58 | -$1,167.42 (-11.7%) | 1 | 🎯 💎 🦊 |
 
 ---
